@@ -1,0 +1,6 @@
+
+public class Directivo extends Profesor{
+
+	boolean salesiano;
+	String Horario;
+}

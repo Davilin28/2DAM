@@ -1,0 +1,7 @@
+
+public class Administracion extends Persona	{
+
+	char genero;
+	
+	
+}

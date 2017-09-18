@@ -1,0 +1,9 @@
+
+public class Actividad7 {
+
+	public static void main(String[] args) {
+		Profesor p1 = new Profesor("09070489w", "Jose", "Perez", 1032.25, 2, true);
+		Directivo p2 = new Directivo("07040302D", "Luis", "Rodriguez", 530.25, 5, false, true, "M");
+	}
+
+}

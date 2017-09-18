@@ -1,0 +1,9 @@
+
+public class Profesor extends Persona{
+
+	public Profesor(String dni, String nombre, String apellidos, double salario) {
+		super(dni, nombre, apellidos, salario);
+		// TODO Auto-generated constructor stub
+	}
+	
+}

@@ -1,0 +1,10 @@
+
+public class Actividad6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// Decir si un numero es Primo o no
+
+		int numero = 7;
+		int contador = 0;
+}
