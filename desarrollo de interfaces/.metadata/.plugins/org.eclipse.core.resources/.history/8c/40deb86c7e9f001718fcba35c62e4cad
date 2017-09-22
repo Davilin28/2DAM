@@ -1,0 +1,94 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import javax.swing.JCheckBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Ejemplo {
+
+	private JFrame frame;
+	private JTextField txtSs;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Ejemplo window = new Ejemplo();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Ejemplo() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 544, 440);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblSoyUnJlabel = new JLabel("Soy un JLabel");
+		lblSoyUnJlabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblSoyUnJlabel.setBounds(96, 28, 111, 34);
+		frame.getContentPane().add(lblSoyUnJlabel);
+		
+		JButton btnSoyUnJbutton = new JButton("Soy un JBUTTON");
+		btnSoyUnJbutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnSoyUnJbutton.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnSoyUnJbutton.setBounds(244, 28, 165, 31);
+		frame.getContentPane().add(btnSoyUnJbutton);
+		
+		txtSs = new JTextField();
+		txtSs.setText("Soy un JTextField");
+		txtSs.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		txtSs.setBounds(151, 95, 154, 40);
+		frame.getContentPane().add(txtSs);
+		txtSs.setColumns(10);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Soy Un JRadioButton",true);
+		rdbtnNewRadioButton.setBounds(96, 144, 157, 34);
+		frame.getContentPane().add(rdbtnNewRadioButton);
+		
+		JCheckBox chckbxSoyUnJcheckbox = new JCheckBox("Soy un JCheckBox",false);
+		chckbxSoyUnJcheckbox.setBounds(96, 231, 154, 25);
+		frame.getContentPane().add(chckbxSoyUnJcheckbox);
+		
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnAceptar.setBounds(284, 326, 97, 25);
+		frame.getContentPane().add(btnAceptar);
+		
+		JRadioButton rdbtnSoyUnJradiobutton = new JRadioButton("Soy Un JRadioButton2",false);
+		rdbtnSoyUnJradiobutton.setBounds(96, 183, 157, 34);
+		frame.getContentPane().add(rdbtnSoyUnJradiobutton);
+	}
+}

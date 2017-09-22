@@ -17,6 +17,8 @@ public class Actividad3 {
 		URL web = null;
 		InputStream contenido = null;
 		String pagWeb = "";
+		String variable = "<td class='ToWrd' >";
+		int aux = 0;
 
 		try {
 			web = new URL("http://www.wordreference.com/es/en/translation.asp?spen=" + palabra);
@@ -34,6 +36,11 @@ public class Actividad3 {
 
 		// Convertir InputStream en String
 		pagWeb = getStringFromInputStream(contenido);
+		
+		pagWeb = pagWeb.substring(pagWeb.indexOf(variable) + variable.length());
+		while(pagWeb.charAt(aux) != '<');
+			aux++;
+		pagWeb = pagWeb.substring(0, aux);
 
 		System.out.println(pagWeb);
 
