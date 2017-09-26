@@ -1,6 +1,0 @@
-
-public class Administracion extends Persona	{
-
-	protected char genero;
-	protected int extras;
-}
