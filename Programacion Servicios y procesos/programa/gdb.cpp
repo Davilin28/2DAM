@@ -1,4 +1,4 @@
-#include <getopt.h>
+#include <getopt.h> // libreria de c que te permite parchear las lineas de comandos
 #include <stdio.h>
 #include <stdlib.h>
 
