@@ -13,15 +13,16 @@ public class Actividad3 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String palabra = "salchicha";
+		String palabra = "perro";
 		URL web = null;
 		InputStream contenido = null;
 		String pagWeb = "";
-		String variable = "<td class='ToWrd' >";
-		int aux = 0;
+		String constante = "<td class='ToWrd' >";
+		int auxiliar = 0;
 
 		try {
 			web = new URL("http://www.wordreference.com/es/en/translation.asp?spen=" + palabra);
+
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,13 +36,13 @@ public class Actividad3 {
 		}
 
 		// Convertir InputStream en String
-		pagWeb = getStringFromInputStream(contenido);
-		
-		pagWeb = pagWeb.substring(pagWeb.indexOf(variable) + variable.length());
-		while(pagWeb.charAt(aux) != '<');
-			aux++;
-		pagWeb = pagWeb.substring(0, aux);
 
+		pagWeb = getStringFromInputStream(contenido);
+
+		pagWeb = pagWeb.substring(pagWeb.indexOf(constante) + constante.length());
+		while (pagWeb.charAt(auxiliar) != '<')
+			auxiliar++;
+		pagWeb = pagWeb.substring(0, auxiliar - 1);
 		System.out.println(pagWeb);
 
 	}

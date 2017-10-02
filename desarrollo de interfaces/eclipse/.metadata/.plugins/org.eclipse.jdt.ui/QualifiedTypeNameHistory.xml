@@ -4,4 +4,6 @@
 <fullyQualifiedTypeName name="Profesor"/>
 <fullyQualifiedTypeName name="Directivo"/>
 <fullyQualifiedTypeName name="Administracion"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>
