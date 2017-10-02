@@ -106,7 +106,6 @@ public class Login extends JFrame {
 					jpassClave.setText("");
 					txtUsuario.requestFocus(); // El cursor se pone en txtUsuario nada mas borrar los datos.
 				}
-
 			}
 		});
 
