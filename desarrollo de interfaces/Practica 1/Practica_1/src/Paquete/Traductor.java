@@ -227,7 +227,6 @@ public class Traductor extends JFrame {
 					auxiliar++;
 				pagWeb = pagWeb.substring(0, auxiliar - 1);
 				textFrances.setText("");
-				// System.out.println(pagWeb);
 				textPaneFrances.setText(pagWeb);
 
 			}
