@@ -93,18 +93,17 @@ public class Login extends JFrame {
 				char[] clave = jpassClave.getPassword();
 				String claveFinal = new String(clave);
 
-				if (txtUsuario.getText().equals("david") && claveFinal.equals("12345")) {
-					dispose();
-					JOptionPane.showMessageDialog(null, "Bienvenido al Traductor", "Accediste correctamente",
-							JOptionPane.INFORMATION_MESSAGE);
-					Traductor t = new Traductor();
-					t.setVisible(true);
-				} else {
+				if (txtUsuario.getText().toString().isEmpty() && claveFinal.toString().isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "ERROR",
 							JOptionPane.ERROR_MESSAGE);
 					txtUsuario.setText("");
 					jpassClave.setText("");
-					txtUsuario.requestFocus(); // El cursor se pone en txtUsuario nada mas borrar los datos.
+					txtUsuario.requestFocus(); // El cursor se pone en txtUsuario nada mas borrar los datos.dispose();
+				} else {
+					JOptionPane.showMessageDialog(null, "Bienvenido al Traductor", "Accediste correctamente",
+							JOptionPane.INFORMATION_MESSAGE);
+					Traductor t = new Traductor();
+					t.setVisible(true);
 				}
 			}
 		});

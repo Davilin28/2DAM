@@ -63,7 +63,7 @@ public class Registro extends JFrame {
 		lblRegistro.setBounds(115, 13, 462, 63);
 		contentPane.add(lblRegistro);
 
-		JLabel lblNombre = new JLabel("Nombre:");
+		JLabel lblNombre = new JLabel("Nombre:*");
 		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNombre.setBounds(71, 95, 110, 34);
 		contentPane.add(lblNombre);
@@ -73,7 +73,7 @@ public class Registro extends JFrame {
 		contentPane.add(textNombre);
 		textNombre.setColumns(10);
 
-		JLabel lblApellidos = new JLabel("Apellidos:");
+		JLabel lblApellidos = new JLabel("Apellidos:*");
 		lblApellidos.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblApellidos.setBounds(71, 188, 110, 34);
 		contentPane.add(lblApellidos);
@@ -83,7 +83,7 @@ public class Registro extends JFrame {
 		textApellidos.setBounds(248, 188, 243, 34);
 		contentPane.add(textApellidos);
 
-		JLabel lblDni = new JLabel("DNI:");
+		JLabel lblDni = new JLabel("DNI:*");
 		lblDni.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblDni.setBounds(71, 235, 110, 34);
 		contentPane.add(lblDni);
@@ -93,12 +93,13 @@ public class Registro extends JFrame {
 		textDNI.setBounds(248, 235, 243, 34);
 		contentPane.add(textDNI);
 
-		JLabel lblSexo = new JLabel("Sexo:");
+		JLabel lblSexo = new JLabel("Sexo *:");
 		lblSexo.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblSexo.setBounds(71, 306, 110, 34);
 		contentPane.add(lblSexo);
 
 		JRadioButton rdbtnMasculino = new JRadioButton("Masculino");
+		rdbtnMasculino.setSelected(true);
 		buttonGroup.add(rdbtnMasculino);
 		rdbtnMasculino.setBounds(248, 289, 127, 25);
 		contentPane.add(rdbtnMasculino);
@@ -127,7 +128,7 @@ public class Registro extends JFrame {
 		lblNewLabel.setBounds(71, 359, 377, 34);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
+		JLabel lblContrasea = new JLabel("Contrase\u00F1a:*");
 		lblContrasea.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblContrasea.setBounds(71, 141, 110, 34);
 		contentPane.add(lblContrasea);
@@ -140,11 +141,16 @@ public class Registro extends JFrame {
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			if(textNombre.getText().length()==0 && textApellidos.getText().length()==0 && textDNI.getText().length()==0) {
+				JOptionPane.showMessageDialog(null, "Rellene los campos necesarios", "ERROR",
+						JOptionPane.ERROR_MESSAGE);
+			}else {
 				dispose();
 				JOptionPane.showMessageDialog(null, "Se ha registrado correctamente", "Registro",
 						JOptionPane.INFORMATION_MESSAGE);
 				Login l = new Login();
 				l.setVisible(true);
+			}
 			}
 		});
 		
