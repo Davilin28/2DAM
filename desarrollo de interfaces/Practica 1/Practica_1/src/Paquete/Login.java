@@ -89,22 +89,28 @@ public class Login extends JFrame {
 
 		btnAcceder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				
+				String usuario = txtUsuario.getText();
 				char[] clave = jpassClave.getPassword();
 				String claveFinal = new String(clave);
 
-				if (txtUsuario.getText().toString().isEmpty() && claveFinal.toString().isEmpty()) {
+				if (!txtUsuario.getText().toString().isEmpty() && !claveFinal.toString().isEmpty()) {
+					if(usuario.equals(claveFinal)) {
+						JOptionPane.showMessageDialog(null, "Bienvenido al Traductor", "Accediste correctamente",
+								JOptionPane.INFORMATION_MESSAGE);
+						Traductor t = new Traductor();
+						t.setVisible(true);
+				}
+					if(!usuario.equals(claveFinal)){
+							if(!usuario.equals("")&!claveFinal.equals("")) 
 					JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "ERROR",
-							JOptionPane.ERROR_MESSAGE);
+						JOptionPane.ERROR_MESSAGE);
 					txtUsuario.setText("");
 					jpassClave.setText("");
 					txtUsuario.requestFocus(); // El cursor se pone en txtUsuario nada mas borrar los datos.dispose();
-				} else {
-					JOptionPane.showMessageDialog(null, "Bienvenido al Traductor", "Accediste correctamente",
-							JOptionPane.INFORMATION_MESSAGE);
-					Traductor t = new Traductor();
-					t.setVisible(true);
+				
 				}
+			}
 			}
 		});
 
