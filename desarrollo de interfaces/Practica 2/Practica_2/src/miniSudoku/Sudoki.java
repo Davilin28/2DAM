@@ -383,7 +383,15 @@ public class Sudoki {
 		// Boton reiniciar.
 		btnReiniciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				textField_1.setText("");
+				textField_2.setText("");
+				textField_3.setText("");
+				textField_4.setText("");
+				textField_6.setText("");
+				textField_9.setText("");
+				textField_10.setText("");
+				textField_13.setText("");
+				textField_15.setText("");
 			}
 		});
 
