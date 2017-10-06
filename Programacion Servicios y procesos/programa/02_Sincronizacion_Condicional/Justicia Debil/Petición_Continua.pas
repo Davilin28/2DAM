@@ -9,7 +9,7 @@ PROGRAM PeticionContinua;
 		x := 1;
 		WRITELN('Cliente: Solicito peticion, x = ', x);
 		Peticion := TRUE;
-	END;
+	END;m
 	VAR
 		x : INTEGER;
 		Peticion: BOOLEAN;
