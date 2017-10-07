@@ -47,7 +47,7 @@ public class Sudoki {
 	private JButton Resolver;
 	private Principal resolver;
 	private JButton Comprobar;
-	private JButton btnReiniciar;
+	private JButton Reiniciar;
 	private JButton Salir;
 	private JCheckBox Sombreado;
 	private JRadioButton Redimensionar;
@@ -237,8 +237,8 @@ public class Sudoki {
 		frmMinisudoku.getContentPane().add(panel_1, BorderLayout.WEST);
 		panel_1.setLayout(new GridLayout(4, 1, 0, 0));
 
-		btnReiniciar = new JButton("Reiniciar");
-		panel_1.add(btnReiniciar);
+		Reiniciar = new JButton("Reiniciar");
+		panel_1.add(Reiniciar);
 
 		Resolver = new JButton("Resolver");
 		panel_1.add(Resolver);
@@ -381,7 +381,7 @@ public class Sudoki {
 		textField_15.setColumns(10);
 
 		// Boton reiniciar.
-		btnReiniciar.addActionListener(new ActionListener() {
+		Reiniciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textField_1.setText("");
 				textField_2.setText("");
@@ -431,7 +431,6 @@ public class Sudoki {
 		// Boton resolver.
 		Resolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				resuelto.resolver();
 
 				Sudoku prueba = new Sudoku();
 
@@ -440,7 +439,8 @@ public class Sudoki {
 					System.out.println("SUDOKU cannot be solved.");
 					return;
 				}
-				Principal.printGrid(prueba.getGrid());
+				
+				Principal.printGrid(Sudoku.getGrid());
 				
 				int text1 = solutions[0][1];
 				int text2 = solutions[0][2];
