@@ -398,6 +398,7 @@ public class Sudoki {
 		// Boton comprobar
 		Comprobar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String bloquear;
 				int text1 = solutions[0][1];
 				int text2 = solutions[0][2];
 				int text3 = solutions[0][3];
@@ -417,7 +418,7 @@ public class Sudoki {
 				textField_10.getText().equals(String.valueOf(text7))&&
 				textField_13.getText().equals(String.valueOf(text8))&&
 				textField_15.getText().equals(String.valueOf(text9))){
-				
+					
 					JOptionPane.showMessageDialog(null, "Resuelto Correctamente", "Resuelto",
 							JOptionPane.INFORMATION_MESSAGE);
 				}
