@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import javax.swing.JSplitPane;
 import javax.swing.JToggleButton;
 import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
@@ -78,29 +80,21 @@ public class calculadora_2 {
 		frame.getContentPane().add(panel_2, BorderLayout.WEST);
 		panel_2.setLayout(new GridLayout(2, 1, 0, 0));
 
-		JButton btnNewButton = new JButton("+");
-		panel_2.add(btnNewButton);
+		JButton Sumar = new JButton("+");
+		panel_2.add(Sumar);
 
-		JButton btnNewButton_1 = new JButton("-");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		panel_2.add(btnNewButton_1);
+		JButton Restar = new JButton("-");
+		panel_2.add(Restar);
 
 		JPanel panel_3 = new JPanel();
 		frame.getContentPane().add(panel_3, BorderLayout.EAST);
 		panel_3.setLayout(new GridLayout(2, 1, 0, 0));
 
-		JButton btnNewButton_2 = new JButton("*");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		panel_3.add(btnNewButton_2);
+		JButton Multiplicar = new JButton("*");
+		panel_3.add(Multiplicar);
 
-		JButton btnNewButton_3 = new JButton("/");
-		panel_3.add(btnNewButton_3);
+		JButton Dividir = new JButton("/");
+		panel_3.add(Dividir);
 
 		JPanel panel_1 = new JPanel();
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
@@ -112,14 +106,61 @@ public class calculadora_2 {
 		lblResultado.setBounds(59, 30, 216, 40);
 		panel_1.add(lblResultado);
 
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("Monospaced", Font.PLAIN, 18));
-		textArea.setEditable(false);
-		textArea.setBounds(59, 99, 216, 75);
-		panel_1.add(textArea);
-		
-		btnNewButton.addActionListener(new ActionListener(int num1, int num2) {
-			public void actionPerformed(ActionEvent arg0) {
+		JTextArea resultado = new JTextArea();
+		resultado.setFont(new Font("Monospaced", Font.PLAIN, 18));
+		resultado.setEditable(false);
+		resultado.setBounds(59, 99, 216, 75);
+		panel_1.add(resultado);
+
+		// Boton de sumar
+		Sumar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double val1 = Double.parseDouble(num1.getText());
+				double val2 = Double.parseDouble(num2.getText());
+				double suma = val1 + val2;
+				resultado.setText(String.valueOf(suma));
+
+				num1.setText("");
+				num2.setText("");
+			}
+		});
+
+		// Boton de restar
+		Restar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double val1 = Double.parseDouble(num1.getText());
+				double val2 = Double.parseDouble(num2.getText());
+				double suma = val1 - val2;
+				resultado.setText(String.valueOf(suma));
+
+				num1.setText("");
+				num2.setText("");
+			}
+		});
+
+		// Boton de multiplicar
+		Multiplicar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double val1 = Double.parseDouble(num1.getText());
+				double val2 = Double.parseDouble(num2.getText());
+				double suma = val1 * val2;
+				resultado.setText(String.valueOf(suma));
+
+				num1.setText("");
+				num2.setText("");
+			}
+		});
+
+		// Boton dividir
+		Dividir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double val1 = Double.parseDouble(num1.getText());
+				double val2 = Double.parseDouble(num2.getText());
+				double suma = val1 / val2;
+				resultado.setText(String.valueOf(suma));
+
+				num1.setText("");
+				num2.setText("");
 			}
 		});
 	}
