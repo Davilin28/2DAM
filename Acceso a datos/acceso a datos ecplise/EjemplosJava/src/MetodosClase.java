@@ -24,7 +24,7 @@ public class MetodosClase extends Fecha {
 		f2.setMes(2);
 		f2.setAnio(2);
 		
-		System.out.println(f1.escribeCorto());
+		//System.out.println(f1.escribeCorto());
 		//System.out.println(f2.escribeCorto());
 	}
 
