@@ -1,0 +1,17 @@
+PROCESS P1 (VAR Accesso : TAcceso);
+BEGIN
+	REPEAT
+		Acceso.Peticion1 := TRUE;
+		WHILE Acceso.Peticion2 DO
+			IF Acceso.Turno <> 1 THEN
+				BEGIN
+					Acceso.Peticion1 := FALSE;
+					WHILE Acceso.Turno <> 1 DO;
+					Acceso.Peticion1 := TRUE;
+			END;
+		SeccionCritica1;
+		Acceso.Peticion1 := FALSE;
+		Acceso.Turno := 2;
+		SeccionNoCritica1;
+	FOREVER
+END;

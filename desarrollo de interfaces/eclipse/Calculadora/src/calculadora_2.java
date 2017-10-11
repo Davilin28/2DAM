@@ -23,7 +23,7 @@ import javax.swing.JTextArea;
 
 public class calculadora_2 {
 
-	private JFrame frame;
+	private JFrame frmCalculadora;
 	private JTextField num1;
 	private JTextField num2;
 
@@ -35,7 +35,7 @@ public class calculadora_2 {
 			public void run() {
 				try {
 					calculadora_2 window = new calculadora_2();
-					window.frame.setVisible(true);
+					window.frmCalculadora.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -54,13 +54,14 @@ public class calculadora_2 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		frmCalculadora = new JFrame();
+		frmCalculadora.setTitle("Calculadora");
+		frmCalculadora.setBounds(100, 100, 450, 300);
+		frmCalculadora.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmCalculadora.getContentPane().setLayout(new BorderLayout(0, 0));
 
 		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.NORTH);
+		frmCalculadora.getContentPane().add(panel, BorderLayout.NORTH);
 
 		JLabel lblNumero = new JLabel("Numero 1");
 		panel.add(lblNumero);
@@ -77,7 +78,7 @@ public class calculadora_2 {
 		num2.setColumns(10);
 
 		JPanel panel_2 = new JPanel();
-		frame.getContentPane().add(panel_2, BorderLayout.WEST);
+		frmCalculadora.getContentPane().add(panel_2, BorderLayout.WEST);
 		panel_2.setLayout(new GridLayout(2, 1, 0, 0));
 
 		JButton Sumar = new JButton("+");
@@ -87,7 +88,7 @@ public class calculadora_2 {
 		panel_2.add(Restar);
 
 		JPanel panel_3 = new JPanel();
-		frame.getContentPane().add(panel_3, BorderLayout.EAST);
+		frmCalculadora.getContentPane().add(panel_3, BorderLayout.EAST);
 		panel_3.setLayout(new GridLayout(2, 1, 0, 0));
 
 		JButton Multiplicar = new JButton("*");
@@ -97,7 +98,7 @@ public class calculadora_2 {
 		panel_3.add(Dividir);
 
 		JPanel panel_1 = new JPanel();
-		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
+		frmCalculadora.getContentPane().add(panel_1, BorderLayout.CENTER);
 		panel_1.setLayout(null);
 
 		JLabel lblResultado = new JLabel("RESULTADO");
