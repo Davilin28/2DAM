@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class funciones {
+public class Funciones {
 	// Funcion Crear fichero
 	public static void crearFichero() {
 		Scanner sc = new Scanner(System.in);

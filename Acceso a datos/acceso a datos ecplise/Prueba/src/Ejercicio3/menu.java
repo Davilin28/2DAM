@@ -1,10 +1,10 @@
 package Ejercicio3;
 
-import Ejercicio3.funciones;
+import Ejercicio3.Funciones;
 
 import java.util.Scanner;
 
-public class menu {
+public class Menu {
 	public static void opciones() {
 		Scanner teclado = new Scanner(System.in);
 
@@ -26,27 +26,27 @@ public class menu {
 			switch (opcion) {
 
 			case 1: {
-				funciones.crearFichero();
+				Funciones.crearFichero();
 				break;
 			}
 
 			case 2: {
-				funciones.mostrarInfo();
+				Funciones.mostrarInfo();
 				break;
 			}
 
 			case 3: {
-				funciones.mostrarLong();
+				Funciones.mostrarLong();
 				break;
 			}
 
 			case 4: {
-				funciones.comprobar();
+				Funciones.comprobar();
 				break;
 			}
 
 			case 5: {
-				funciones.borrarFichero();
+				Funciones.borrarFichero();
 				break;
 			}
 
@@ -57,7 +57,7 @@ public class menu {
 
 			default: {
 				System.out.println("Opcion no es correcta");
-				funciones.espera();
+				Funciones.espera();
 			}
 			}
 		} while (opcion != 6);
