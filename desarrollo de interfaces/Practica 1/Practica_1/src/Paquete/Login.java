@@ -98,6 +98,7 @@ public class Login extends JFrame {
 					if(usuario.equals(claveFinal)) {
 						JOptionPane.showMessageDialog(null, "Bienvenido al Traductor", "Accediste correctamente",
 								JOptionPane.INFORMATION_MESSAGE);
+						dispose();
 						Traductor t = new Traductor();
 						t.setVisible(true);
 				}
