@@ -89,9 +89,35 @@ public class Funciones {
 		}
 		espera();
 	}
-	
+
 	public static void crearCarpetas() {
+		String[] ruta = new String[9];
+		ruta[0] = "proyecto";
+		ruta[1] = "proyecto/bin";
+		ruta[2] = "proyecto/src";
+		ruta[3] = "proyecto/doc";
+		ruta[4] = "proyecto/bin/bytecode";
+		ruta[5] = "proyecto/bin/objetos";
+		ruta[6] = "proyecto/src/clase";
+		ruta[7] = "proyecto/doc/html";
+		ruta[8] = "proyecto/doc/pdf";
+		for (int i = 0; i < ruta.length; i++)
+			crear(ruta[i]);
+	}
+
+	// Funcion llamada por crearCarpeta
+	public static void crear(String ruta) {
+		File carpeta = new File(ruta);
 		
+		if (carpeta.exists()) {
+			System.out.println("Existe esa carpeta llamada: " + carpeta);
+		} else {
+			System.out.println("No existe la carpeta llamada: " + carpeta);
+			System.out.println("Creado el arbol de carpetas: " );
+			System.out.println("");
+			carpeta.mkdirs();
+		}
+		espera();
 	}
 
 	// Funcion para tiempo de espera entre opciones
