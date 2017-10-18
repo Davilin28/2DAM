@@ -89,6 +89,10 @@ public class Funciones {
 		}
 		espera();
 	}
+	
+	public static void crearCarpetas() {
+		
+	}
 
 	// Funcion para tiempo de espera entre opciones
 	public static void espera() {

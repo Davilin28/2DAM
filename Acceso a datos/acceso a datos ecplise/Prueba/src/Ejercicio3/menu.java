@@ -19,7 +19,8 @@ public class Menu {
 			System.out.println("3.- Mostrar longitud fichero.");
 			System.out.println("4.- Comprobar si existe.");
 			System.out.println("5.- Borrar fichero.");
-			System.out.println("6.- Salir.");
+			System.out.println("6.- Crear arbol de carpetas");
+			System.out.println("7.- Salir.");
 
 			opcion = teclado.nextInt();
 
@@ -51,6 +52,11 @@ public class Menu {
 			}
 
 			case 6: {
+				Funciones.crearCarpetas();
+				break;
+			}
+			
+			case 7: {
 				System.out.println("Salida");
 				break;
 			}
@@ -60,6 +66,6 @@ public class Menu {
 				Funciones.espera();
 			}
 			}
-		} while (opcion != 6);
+		} while (opcion != 7);
 	}
 }
