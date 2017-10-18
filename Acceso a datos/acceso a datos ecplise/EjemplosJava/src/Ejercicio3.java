@@ -67,7 +67,7 @@ public class Ejercicio3 {
 	public static void crearFichero() {
 		Scanner sc = new Scanner(System.in);
 		String ruta;
-		System.out.print("Indicar el nombre del archivo (sin extension): ");
+		System.out.print("Indicar el nombre del fichero (sin extension): ");
 		ruta = sc.nextLine();
 		File fichero = new File(ruta + ".txt");
 
@@ -87,17 +87,17 @@ public class Ejercicio3 {
 	public static void mostrarInfo() {
 		Scanner sc = new Scanner(System.in);
 		String ruta;
-		System.out.print("Introduzca el nombre del archivo creado: ");
+		System.out.print("Introduzca el nombre del fichero creado: ");
 		ruta = sc.nextLine();
 		File fichero = new File(ruta + ".txt");
 
 		// Salida por cosola
 		System.out.println("Informacion del fichero: ");
 		System.out.println("");
-		System.out.println(fichero.getName());
-		System.out.println(fichero.getAbsolutePath());
-		System.out.println(fichero.getPath());
-		System.out.println(fichero.length());
+		System.out.println("Nombre del fichero: "+fichero.getName());
+		System.out.println("Ruta absoluta: "+fichero.getAbsolutePath());
+		System.out.println("Ruta relativa: "+fichero.getPath());
+		System.out.println("Longitud del fichero: "+fichero.length());
 		espera();
 	}
 
@@ -105,12 +105,12 @@ public class Ejercicio3 {
 	public static void mostrarLong() {
 		Scanner sc = new Scanner(System.in);
 		String ruta;
-		System.out.print("Introduzca el nombre del archivo creado: ");
+		System.out.print("Introduzca el nombre del fichero creado: ");
 		ruta = sc.nextLine();
 		File fichero = new File(ruta + ".txt");
 
 		// Salida por cosola
-		System.out.println("Longitud del fichero " + fichero.getName() + " correspondiente: " + fichero.length());
+		System.out.println("La longitud del fichero " + fichero.getName() + " es: " + fichero.length());
 		espera();
 	}
 
@@ -118,7 +118,7 @@ public class Ejercicio3 {
 	public static void comprobar() {
 		Scanner sc = new Scanner(System.in);
 		String ruta;
-		System.out.print("Introduzca el nombre del archivo creado: ");
+		System.out.print("Introduzca el nombre del fichero creado: ");
 		ruta = sc.nextLine();
 		File fichero = new File(ruta + ".txt");
 
@@ -135,7 +135,7 @@ public class Ejercicio3 {
 	public static void borrarFichero() {
 		Scanner sc = new Scanner(System.in);
 		String ruta;
-		System.out.print("Introduzca el nombre del archivo creado: ");
+		System.out.print("Introduzca el nombre del fichero creado: ");
 		ruta = sc.nextLine();
 		File fichero = new File(ruta + ".txt");
 
@@ -151,7 +151,7 @@ public class Ejercicio3 {
 	// Funcion para tiempo de espera entre opciones
 	public static void espera() {
 		try {
-			Thread.sleep(2200);
+			Thread.sleep(2500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
