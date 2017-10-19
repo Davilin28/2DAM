@@ -90,6 +90,7 @@ public class Funciones {
 		espera();
 	}
 
+	// Funcion para crear carpetas automaticas
 	public static void crearCarpetas() {
 		String[] ruta = new String[9];
 		ruta[0] = "proyecto";
@@ -110,22 +111,22 @@ public class Funciones {
 	// Funcion llamada por crearCarpeta
 	public static void crear(String ruta) {
 		File carpeta = new File(ruta);
-		
+
 		if (carpeta.exists()) {
-			System.out.println("Existe esa carpeta llamada: " +carpeta);
+			System.out.println("Existe esa carpeta llamada: " + carpeta);
 		} else {
 			carpeta.mkdir();
 		}
 	}
-	
+
+	// Mensaje que su proceso se activa cuando termina crearCarpeta
 	public static void mensaje() {
 		System.out.println("Se ha creado correctamente ");
 	}
-	
+
 	// Solo borra las subcarpetas por ejemplo:
 	// Si pones proyecto/bin/objetos te lo elimina.
 	// Si pones proyecto solo al ser el padre no lo elimina
-	
 
 	public static void borrarCarpetas() {
 		Scanner sc = new Scanner(System.in);
@@ -133,7 +134,7 @@ public class Funciones {
 		System.out.print("Introduzca la ruta de la carpeta que desea eliminar: ");
 		ruta = sc.nextLine();
 		File carpeta = new File(ruta);
-		
+
 		if (carpeta.exists()) {
 			carpeta.delete();
 			System.out.println("carpeta borrada");
@@ -141,7 +142,6 @@ public class Funciones {
 			System.out.println("No existe la carpeta llamada: " + carpeta);
 		}
 		espera();
-		
 	}
 
 	// Funcion para tiempo de espera entre opciones
