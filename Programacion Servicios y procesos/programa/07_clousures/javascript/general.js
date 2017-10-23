@@ -15,7 +15,7 @@ Array.prototype.inject = function (acum, fn){
 
 function main() {
 
-    var a = [1,2,3,4,5,6]
+    var a = [1,3,7,9,2,3]
     var p = []
 
     a.each(function(el){
@@ -23,10 +23,10 @@ function main() {
             p.push(el)
     })
 
-    p.each(function (el){
+   /* p.each(function (el){
         alert(el)
     })
-
+*/
     alert(a.inject(0, function(acum, el){
         return acum + el * el
     }))
