@@ -36,15 +36,15 @@ public class Funciones {
 			File datos = new File("nombres.txt");
 			FileReader ficheroLectura = new FileReader(datos);
 			
-			/* En esto es lo que dudo he leido para que sirve en las ayudas del eclipse y sirve para
-			encontrar algun carater especial*/
+			//En esto es lo que dudo he leido para que sirve en las ayudas del eclipse y sirve para
+			//encontrar algun carater especial
 			char[] carater = { ' ' };
 
 			// 2.Leemos los datos uno a uno
 			for (int i = 0; i < nombres.length; i++) {
 				ficheroLectura.read(carater);
 			}
-
+			
 			// 3. Cerramos el fichero
 			ficheroLectura.close();
 		} catch (IOException e) {
@@ -58,6 +58,12 @@ public class Funciones {
 		System.out.println("Contenido de la tabla: ");
 		for (int i = 0; i < nombres.length; i++) {
 			System.out.println("Nombre " + i + " : " + nombres[i]);
+		}
+	}
+	
+	public static void inicializarTabla(String[] nombres) {
+		for (int i = 0; i < nombres.length; i++) {
+			nombres[i]="";
 		}
 	}
 }

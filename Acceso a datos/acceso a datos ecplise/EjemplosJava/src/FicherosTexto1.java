@@ -71,7 +71,7 @@ public class FicherosTexto1 {
 		String[] lista = {"Pepe","Ana","Juan"};
 	
 		escribirFichero(lista);
-		//inicializarTabla(lista);
+		inicializarTabla(lista);
 		leerFichero(lista);
 		imprimirTabla(lista);
 	}
