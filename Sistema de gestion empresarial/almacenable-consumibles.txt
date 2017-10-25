@@ -1,0 +1,5 @@
+carnes: costillar, panceta, chuletas 	consumibles	bajo pedido/compra
+textil: camiseta, pantalones, polos	 almacenables	comprar
+fruteria: sandia, melon, platanos 	consumibles	bajo pedido/compra
+panaderia: pan, donuts, magdalenas	 consumibles	bajo pedido/compra
+pescado: salmon, sardina, luvina 	consumibles	bajo pedido/compra

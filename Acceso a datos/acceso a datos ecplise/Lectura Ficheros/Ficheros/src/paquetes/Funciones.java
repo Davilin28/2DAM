@@ -1,7 +1,6 @@
 package paquetes;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +16,9 @@ public class Funciones {
 
 			// 2. Insertamos los datos dentro del fichero recorriendolo con un for.
 			for (int i = 0; i < nombres.length; i++) {
-				ficheroEscritura.write(nombres[i]);
+					ficheroEscritura.write(nombres[i]);
+					if (i!=nombres.length-1)
+						ficheroEscritura.write(';');
 			}
 
 			// 3. Cerrar el fichero
@@ -32,21 +33,25 @@ public class Funciones {
 	public static void leerFichero(String[] nombres) {
 		try {
 			// 1.Creamos el fichero y lo leemos
-
 			File datos = new File("nombres.txt");
 			FileReader ficheroLectura = new FileReader(datos);
 			
-			//En esto es lo que dudo he leido para que sirve en las ayudas del eclipse y sirve para
-			//encontrar algun carater especial
-			char[] carater = { ' ' };
-
-			// 2.Leemos los datos uno a uno
-			for (int i = 0; i < nombres.length; i++) {
-				ficheroLectura.read(carater);
+			// 2. leer el fichero por bloques de 4 variables
+			char[] nombre = new char[4];
+			int res = 0, contador = 0;
+			String cadenaCompleta = "";
+			res = ficheroLectura.read(nombre);
+			
+			// Pendiente de encontrar la opcion de eliminar los datos de la ultima lectura
+			while(res !=  -1) {
+				cadenaCompleta = cadenaCompleta + String.valueOf(nombre);
+				res = ficheroLectura.read(nombre);
+				contador++;
 			}
 			
 			// 3. Cerramos el fichero
 			ficheroLectura.close();
+			imprimirFichero(cadenaCompleta);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,12 +59,12 @@ public class Funciones {
 	}
 
 	// Imprimir los datos
-	public static void imprimirFichero(String[] nombres) {
+	public static void imprimirFichero(String cadenaCompleta) {
+		String[] complete = cadenaCompleta.split(";");
 		System.out.println("Contenido de la tabla: ");
-		for (int i = 0; i < nombres.length; i++) {
-			System.out.println("Nombre " + i + " : " + nombres[i]);
+		for(int i=0;i<complete.length;i++)
+			System.out.println("Posicion " + i + " : " + complete[i]);
 		}
-	}
 	
 	public static void inicializarTabla(String[] nombres) {
 		for (int i = 0; i < nombres.length; i++) {
