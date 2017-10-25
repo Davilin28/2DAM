@@ -37,12 +37,11 @@ public class Funciones {
 			FileReader ficheroLectura = new FileReader(datos);
 			
 			// 2. leer el fichero por bloques de 4 variables
-			char[] nombre = new char[4];
+			char[] nombre = new char[1];
 			int res = 0, contador = 0;
 			String cadenaCompleta = "";
 			res = ficheroLectura.read(nombre);
 			
-			// Pendiente de encontrar la opcion de eliminar los datos de la ultima lectura
 			while(res !=  -1) {
 				cadenaCompleta = cadenaCompleta + String.valueOf(nombre);
 				res = ficheroLectura.read(nombre);
