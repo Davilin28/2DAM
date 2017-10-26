@@ -38,15 +38,14 @@ public class Funciones {
 			
 			// 2. leer el fichero letra a letra 
 			char[] nombre = new char[1];
-			int res = 0, contador = 0;
+			int res;
 			String cadenaCompleta = "";
 			res = ficheroLectura.read(nombre);
 			
 			while(res !=  -1) {
 				// Convierte el char en un String
-				cadenaCompleta = cadenaCompleta + String.valueOf(nombre);
+				cadenaCompleta += String.valueOf(nombre);
 				res = ficheroLectura.read(nombre);
-				contador++;
 			}
 			
 			// 3. Cerramos el fichero
@@ -54,6 +53,7 @@ public class Funciones {
 			
 			// Llamamos a la funcion para que nos imprima la cadenaCompleta
 			imprimirFichero(cadenaCompleta);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,6 +68,7 @@ public class Funciones {
 		// y recorrela con un for hasta la longitud de complete
 		String[] complete = cadenaCompleta.split(";");
 		System.out.println("Contenido de la tabla: ");
+		System.out.println("");
 		for(int i=0;i<complete.length;i++)
 			System.out.println("Posicion " + i + " : " + complete[i]);
 		}
