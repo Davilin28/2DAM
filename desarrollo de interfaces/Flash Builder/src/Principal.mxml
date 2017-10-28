@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="955" minHeight="600" pageTitle="Calculadora">
+	
+	<fx:Script>
+		<![CDATA[
+			import flash.utils.flash_proxy;
+			
+			import mx.controls.Alert;
+			import mx.events.CloseEvent;
+			import mx.logging.Log;
+			
+			protected function ClickLogin(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				if(TextLogin.text.length !=0 && TextPass.text.length !=0 && TextLogin.text == TextPass.text)
+				{
+					
+					// Si la contrasena y el usuario son iguales y si no estan vacios
+						Log.enabled = false
+						TextLogin.text = ""
+						TextPass.text = ""
+							
+						if(Calc.selected){
+							PCal.enabled = true
+						}
+						
+				}else
+				{
+					// Si la contrasena y el usuario no son iguales
+					Alert.show('Usuario o contraseña incorrecta','Datos Incorrectos',mx.controls.Alert.OK)
+					TextLogin.text = ""
+					TextPass.text = ""
+				}
+			}
+			
+			// Evento click en radio buttom calculadora
+			protected function CalClick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				if(Log.enabled == 0){
+					if(Calc.selected){
+						PTeo.enabled = false
+						PCal.enabled = true
+					}
+				}
+			}
+			
+			// Evento click radio buttom Pitagora
+			protected function PitaClick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+			if(Log.enabled == 0){	
+				if(Pit.selected){
+					PCal.enabled = false
+					PTeo.enabled = true
+					}
+				}
+			}
+			
+			// Evento para Salir
+			protected function Salir_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+				// Terminar la salida. No sale 
+				Alert.show('Salir', 'Realmente desea salir?', Alert.OK| Alert.CANCEL, this, Salir_clickHandler)
+				
+					Log.enabled = true
+					PCal.enabled = false
+					PTeo.enabled = false
+					}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<s:RadioButtonGroup id="Acciones"/>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Panel x="146" y="106" width="282" height="159" enabled="true" fontSize="12" title="Acceso">
+		<s:TextInput id="TextLogin" x="10" y="6" width="141" height="32" enabled="true"
+					 prompt="Login"/>
+		<s:TextInput id="TextPass" x="10" y="42" width="141" height="32" displayAsPassword="true"
+					 enabled="true" prompt="Password"/>
+		<s:Button id="Log" x="47" y="83" width="84" height="31" label="Login"
+				  click="ClickLogin(event)"/>
+		<s:Button x="137" y="83" width="84" height="31" label="Lagout"
+				  click="Salir_clickHandler(event)" enabled="true"/>
+		<s:Label x="159" y="6" width="59" height="17" fontSize="14" fontWeight="bold"
+				 text="Activar:"/>
+		<s:VGroup x="159" y="27" width="97" height="44">
+			<s:RadioButton id="Calc" label="Calculadora" click="CalClick(event)" enabled="true"
+						   groupName="Acciones" selected="true"/>
+			<s:RadioButton id="Pit" label="Pitagoras" click="PitaClick(event)" enabled="true"
+						   groupName="Acciones"/>
+		</s:VGroup>
+	</s:Panel>
+	<s:Panel id="PCal" x="440" y="106" width="203" height="313" enabled="false" fontSize="12"
+			 title="Calculadora Sencilla">
+		<s:TextInput x="10" y="10" width="187" enabled="false"/>
+		<s:TextInput x="10" y="40" width="187" height="45" enabled="false"/>
+		<s:Button x="10" y="93" width="43" height="39" label="1" enabled="true" fontSize="29"/>
+		<s:Button x="57" y="93" width="43" height="39" label="2" enabled="true" fontSize="29"/>
+		<s:Button x="103" y="93" width="43" height="39" label="3" enabled="true" fontSize="29"/>
+		<s:Button x="148" y="93" width="43" height="39" label="+" enabled="true" fontSize="29"/>
+		<s:Button x="10" y="140" width="43" height="39" label="4" enabled="true" fontSize="29"/>
+		<s:Button x="57" y="140" width="43" height="39" label="5" enabled="true" fontSize="29"/>
+		<s:Button x="103" y="140" width="43" height="39" label="6" enabled="true" fontSize="29"/>
+		<s:Button x="148" y="140" width="43" height="39" label="-" enabled="true" fontSize="29"/>
+		<s:Button x="10" y="187" width="43" height="39" label="7" enabled="true" fontSize="29"/>
+		<s:Button x="57" y="187" width="43" height="39" label="8" enabled="true" fontSize="29"/>
+		<s:Button x="103" y="187" width="43" height="39" label="9" enabled="true" fontSize="29"/>
+		<s:Button x="148" y="187" width="43" height="39" label="*" enabled="true" fontSize="29"/>
+		<s:Button x="10" y="234" width="43" height="39" label="C" enabled="true" fontSize="29"/>
+		<s:Button x="57" y="234" width="43" height="39" label="0" enabled="true" fontSize="29"/>
+		<s:Button x="103" y="234" width="43" height="39" label="=" enabled="true" fontSize="29"/>
+		<s:Button x="148" y="234" width="43" height="39" label="/" enabled="true" fontSize="29"/>
+	</s:Panel>
+	<s:Panel id="PTeo" x="146" y="273" width="282" height="146" enabled="false"
+			 title="Teorema de Pitágoras">
+		<s:Button x="166" y="-25" width="104" label="Reiniciar"/>
+		<s:TextInput x="166" y="10" width="104" height="30" enabled="true" fontSize="19"
+					 prompt="Cateto 1"/>
+		<s:TextInput x="165" y="43" width="104" height="30" enabled="true" fontSize="19"
+					 prompt="Cateto 2"/>
+		<s:TextInput x="165" y="76" width="104" height="30" enabled="true" fontSize="18"
+					 prompt="Hipotenusa"/>
+		<s:Image x="10" y="12" width="147" height="100" scaleMode="letterbox" smooth="true"
+				 smoothingQuality="high" source="assets/triangulorectangulo.jpg"/>
+	</s:Panel>
+</s:Application>
