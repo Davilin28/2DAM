@@ -8,13 +8,14 @@
 		<![CDATA[
 			import flash.utils.flash_proxy;
 			
+			import flashx.textLayout.formats.Float;
+			
 			import mx.controls.Alert;
 			import mx.events.CloseEvent;
 			import mx.logging.Log;
 			
 			protected function ClickLogin(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
 				if(TextLogin.text.length !=0 && TextPass.text.length !=0 && TextLogin.text == TextPass.text)
 				{
 					
@@ -39,7 +40,6 @@
 			// Evento click en radio buttom calculadora
 			protected function CalClick(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
 				if(Log.enabled == 0){
 					if(Calc.selected){
 						PTeo.enabled = false
@@ -51,7 +51,6 @@
 			// Evento click radio buttom Pitagora
 			protected function PitaClick(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
 			if(Log.enabled == 0){	
 				if(Pit.selected){
 					PCal.enabled = false
@@ -63,8 +62,6 @@
 			// Evento para Salir
 			protected function Salir_clickHandler(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
-				
 				// Terminar la salida. No sale 
 				Alert.show('Salir', 'Realmente desea salir?', Alert.OK| Alert.CANCEL, this, Salir_clickHandler)
 				
@@ -72,6 +69,35 @@
 					PCal.enabled = false
 					PTeo.enabled = false
 					}
+			
+			// Evento para limpiar panel de pitagoras.
+			protected function LimpiarClick(event:MouseEvent):void
+			{
+				Catet1.text = ""
+				Catet2.text = ""
+				ResHipo.text = ""
+			}
+			
+			// calcular hipotenusa
+			protected function Select(event:MouseEvent):void
+			{
+				// Creamos variables enteras para luego utilizarlas
+				var num1 : int
+				var num2 : int
+				
+				// Convertir el texto en entero
+				num1 = parseInt(Catet1.text)
+				num2 = parseInt(Catet2.text)
+					
+				// Cogemos ResHipo y cogemos y aplicamos la formula de hipotenusa	
+				ResHipo.text = Math.sqrt((Math.pow(num1, 2) + Math.pow(num2, 2))).toString().valueOf()
+			}			
+			
+			protected function limpiaGen(event:MouseEvent):void
+			{
+				oper.text = ""
+				result.text = "0"
+			}
 		]]>
 	</fx:Script>
 	
@@ -97,37 +123,52 @@
 						   groupName="Acciones"/>
 		</s:VGroup>
 	</s:Panel>
-	<s:Panel id="PCal" x="440" y="106" width="203" height="313" enabled="false" fontSize="12"
+	<s:Panel id="PCal" x="434" y="106" width="203" height="313" enabled="false" fontSize="12"
 			 title="Calculadora Sencilla">
-		<s:TextInput x="10" y="10" width="187" enabled="false"/>
-		<s:TextInput x="10" y="40" width="187" height="45" enabled="false"/>
-		<s:Button x="10" y="93" width="43" height="39" label="1" enabled="true" fontSize="29"/>
-		<s:Button x="57" y="93" width="43" height="39" label="2" enabled="true" fontSize="29"/>
-		<s:Button x="103" y="93" width="43" height="39" label="3" enabled="true" fontSize="29"/>
-		<s:Button x="148" y="93" width="43" height="39" label="+" enabled="true" fontSize="29"/>
-		<s:Button x="10" y="140" width="43" height="39" label="4" enabled="true" fontSize="29"/>
-		<s:Button x="57" y="140" width="43" height="39" label="5" enabled="true" fontSize="29"/>
-		<s:Button x="103" y="140" width="43" height="39" label="6" enabled="true" fontSize="29"/>
+		<s:TextInput id="oper" x="10" y="10" width="187" enabled="false" fontSize="24"
+					 textAlign="right"/>
+		<s:TextInput id="result" x="10" y="40" width="187" height="45" enabled="false" fontSize="24"
+					 textAlign="right"/>
+		<s:Button id="one" x="10" y="93" width="43" height="39" label="1" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="two" x="57" y="93" width="43" height="39" label="2" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="three" x="103" y="93" width="43" height="39" label="3" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="sumar" x="148" y="93" width="43" height="39" label="+" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="four" x="10" y="140" width="43" height="39" label="4" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="five" x="57" y="140" width="43" height="39" label="5" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="six" x="103" y="140" width="43" height="39" label="6" enabled="true"
+				  fontSize="29"/>
 		<s:Button x="148" y="140" width="43" height="39" label="-" enabled="true" fontSize="29"/>
-		<s:Button x="10" y="187" width="43" height="39" label="7" enabled="true" fontSize="29"/>
-		<s:Button x="57" y="187" width="43" height="39" label="8" enabled="true" fontSize="29"/>
-		<s:Button x="103" y="187" width="43" height="39" label="9" enabled="true" fontSize="29"/>
-		<s:Button x="148" y="187" width="43" height="39" label="*" enabled="true" fontSize="29"/>
-		<s:Button x="10" y="234" width="43" height="39" label="C" enabled="true" fontSize="29"/>
-		<s:Button x="57" y="234" width="43" height="39" label="0" enabled="true" fontSize="29"/>
-		<s:Button x="103" y="234" width="43" height="39" label="=" enabled="true" fontSize="29"/>
+		<s:Button id="seven" x="10" y="187" width="43" height="39" label="7" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="eight" x="57" y="187" width="43" height="39" label="8" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="nine" x="103" y="187" width="43" height="39" label="9" enabled="true"
+				  fontSize="29"/>
+		<s:Button x="148" y="187" width="43" height="39" label="X" enabled="true" fontSize="29"/>
+		<s:Button x="10" y="234" width="43" height="39" label="C" click="limpiaGen(event)" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="cero" x="57" y="234" width="43" height="39" label="0" enabled="true"
+				  fontSize="29"/>
+		<s:Button id="igual" x="103" y="234" width="43" height="39" label="=" enabled="true"
+				  fontSize="29"/>
 		<s:Button x="148" y="234" width="43" height="39" label="/" enabled="true" fontSize="29"/>
 	</s:Panel>
 	<s:Panel id="PTeo" x="146" y="273" width="282" height="146" enabled="false"
 			 title="Teorema de Pitágoras">
-		<s:Button x="166" y="-25" width="104" label="Reiniciar"/>
-		<s:TextInput x="166" y="10" width="104" height="30" enabled="true" fontSize="19"
+		<s:Button x="166" y="-25" width="104" label="Reiniciar" click="LimpiarClick(event)"/>
+		<s:TextInput id="Catet1" x="166" y="10" width="104" height="30" enabled="true" fontSize="19"
 					 prompt="Cateto 1"/>
-		<s:TextInput x="165" y="43" width="104" height="30" enabled="true" fontSize="19"
+		<s:TextInput id="Catet2" x="165" y="43" width="104" height="30" enabled="true" fontSize="19"
 					 prompt="Cateto 2"/>
-		<s:TextInput x="165" y="76" width="104" height="30" enabled="true" fontSize="18"
+		<s:TextInput id="ResHipo" x="165" y="76" width="104" height="30" enabled="false" fontSize="18"
 					 prompt="Hipotenusa"/>
-		<s:Image x="10" y="12" width="147" height="100" scaleMode="letterbox" smooth="true"
-				 smoothingQuality="high" source="assets/triangulorectangulo.jpg"/>
+		<s:Image x="10" y="12" width="147" height="100" click="Select(event)" scaleMode="letterbox"
+				 smooth="true" smoothingQuality="high" source="assets/triangulorectangulo.jpg"/>
 	</s:Panel>
 </s:Application>
