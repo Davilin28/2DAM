@@ -14,7 +14,10 @@
 			import mx.events.CloseEvent;
 			import mx.logging.Log;
 			
-			public var resultado : int
+			var resultado : int
+			var numb1 : Number
+			var valor : String
+			var numb2 : Number
 			
 			protected function ClickLogin(event:MouseEvent):void
 			{
@@ -165,37 +168,62 @@
 				// TODO Auto-generated method stub
 				this.oper.text += "0"
 			}
+		
 			
 			// Eventos de OPERACIONES
 			protected function restaclick(event:MouseEvent):void
 			{
 				// TODO Auto-generated method stub
-				this.oper.text += "-"
+				//this.oper.text += "-"
+				operando()
+				valor = "-"
 			}
 			
 			protected function multclick(event:MouseEvent):void
 			{
 				// TODO Auto-generated method stub
-				this.oper.text += "*"
+				//this.oper.text += "*"
+				operando()
+				valor = "*"
 			}
 			
 			protected function divclick(event:MouseEvent):void
 			{
 				// TODO Auto-generated method stub
-				this.oper.text += "/"
+				//this.oper.text += "/"
+				operando()
+				valor = "/"
 			}
 			
 			protected function sumclick(event:MouseEvent):void
 			{
 				// TODO Auto-generated method stub
-				this.oper.text += "+"
+				//oper.text += "+"
+				operando()
+				valor = "+"
+			}
+			
+			public function operando(): void
+			{
+				numb1 = Number(oper.text)
+				oper.text = " "
 			}
 			
 			protected function igualclick(event:MouseEvent):void
 			{
 				// TODO Auto-generated method stub
 				
-				result.text = String(resultado).toString().valueOf()
+				if(valor == "+")
+					result.text = (numb1+Number(oper.text)).toString().valueOf()
+				
+				if(valor == "-")
+					result.text = (numb1-Number(oper.text)).toString().valueOf()
+						
+				if(valor == "*")
+					result.text = (numb1*Number(oper.text)).toString().valueOf()
+				
+				if(valor == "/")
+					result.text = (numb1/Number(oper.text)).toString().valueOf()
 			}
 		]]>
 	</fx:Script>
