@@ -14,6 +14,8 @@
 			import mx.events.CloseEvent;
 			import mx.logging.Log;
 			
+			public var resultado : int
+			
 			protected function ClickLogin(event:MouseEvent):void
 			{
 				if(TextLogin.text.length !=0 && TextPass.text.length !=0 && TextLogin.text == TextPass.text)
@@ -63,11 +65,14 @@
 			protected function Salir_clickHandler(event:MouseEvent):void
 			{
 				// Terminar la salida. No sale 
-				Alert.show('Salir', 'Realmente desea salir?', Alert.OK| Alert.CANCEL, this, Salir_clickHandler)
+				Alert.show('Salir', 'Realmente desea salir?', Alert.OK | Alert.CANCEL, this, Salir_clickHandler)
 				
 					Log.enabled = true
 					PCal.enabled = false
 					PTeo.enabled = false
+					Catet1.text = ""
+					Catet2.text = ""
+					ResHipo.text = ""
 					}
 			
 			// Evento para limpiar panel de pitagoras.
@@ -93,10 +98,104 @@
 				ResHipo.text = Math.sqrt((Math.pow(num1, 2) + Math.pow(num2, 2))).toString().valueOf()
 			}			
 			
+			// Evento para limpiar la calculadora
 			protected function limpiaGen(event:MouseEvent):void
 			{
 				oper.text = ""
 				result.text = "0"
+			}
+			
+			// Eventos de numeros
+			protected function unoclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "1"
+			}
+			
+			protected function dosclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "2"
+			}
+			
+			protected function tresclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "3"
+			}
+			
+			protected function cuatroclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "4"
+			}
+			
+			protected function cincoclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "5"		
+			}
+			
+			protected function seisclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "6"
+			}
+			
+			protected function sieteclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "7"
+			}
+			
+			protected function ochoclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "8"
+			}
+			
+			protected function nueveclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "9"
+			}
+			
+			protected function ceroclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "0"
+			}
+			
+			// Eventos de OPERACIONES
+			protected function restaclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "-"
+			}
+			
+			protected function multclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "*"
+			}
+			
+			protected function divclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "/"
+			}
+			
+			protected function sumclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				this.oper.text += "+"
+			}
+			
+			protected function igualclick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+				result.text = String(resultado).toString().valueOf()
 			}
 		]]>
 	</fx:Script>
@@ -129,35 +228,38 @@
 					 textAlign="right"/>
 		<s:TextInput id="result" x="10" y="40" width="187" height="45" enabled="false" fontSize="24"
 					 textAlign="right"/>
-		<s:Button id="one" x="10" y="93" width="43" height="39" label="1" enabled="true"
+		<s:Button id="one" x="10" y="93" width="43" height="39" label="1" click="unoclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button id="two" x="57" y="93" width="43" height="39" label="2" click="dosclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button id="three" x="103" y="93" width="43" height="39" label="3" click="tresclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button id="sumar" x="148" y="93" width="43" height="39" label="+" click="sumclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button id="four" x="10" y="140" width="43" height="39" label="4" click="cuatroclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button id="five" x="57" y="140" width="43" height="39" label="5" click="cincoclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button id="six" x="103" y="140" width="43" height="39" label="6" click="seisclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button x="148" y="140" width="43" height="39" label="-" click="restaclick(event)" enabled="true"
 				  fontSize="29"/>
-		<s:Button id="two" x="57" y="93" width="43" height="39" label="2" enabled="true"
+		<s:Button id="seven" x="10" y="187" width="43" height="39" label="7" click="sieteclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button id="eight" x="57" y="187" width="43" height="39" label="8" click="ochoclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button id="nine" x="103" y="187" width="43" height="39" label="9" click="nueveclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button x="148" y="187" width="43" height="39" label="X" click="multclick(event)" enabled="true"
 				  fontSize="29"/>
-		<s:Button id="three" x="103" y="93" width="43" height="39" label="3" enabled="true"
-				  fontSize="29"/>
-		<s:Button id="sumar" x="148" y="93" width="43" height="39" label="+" enabled="true"
-				  fontSize="29"/>
-		<s:Button id="four" x="10" y="140" width="43" height="39" label="4" enabled="true"
-				  fontSize="29"/>
-		<s:Button id="five" x="57" y="140" width="43" height="39" label="5" enabled="true"
-				  fontSize="29"/>
-		<s:Button id="six" x="103" y="140" width="43" height="39" label="6" enabled="true"
-				  fontSize="29"/>
-		<s:Button x="148" y="140" width="43" height="39" label="-" enabled="true" fontSize="29"/>
-		<s:Button id="seven" x="10" y="187" width="43" height="39" label="7" enabled="true"
-				  fontSize="29"/>
-		<s:Button id="eight" x="57" y="187" width="43" height="39" label="8" enabled="true"
-				  fontSize="29"/>
-		<s:Button id="nine" x="103" y="187" width="43" height="39" label="9" enabled="true"
-				  fontSize="29"/>
-		<s:Button x="148" y="187" width="43" height="39" label="X" enabled="true" fontSize="29"/>
 		<s:Button x="10" y="234" width="43" height="39" label="C" click="limpiaGen(event)" enabled="true"
 				  fontSize="29"/>
-		<s:Button id="cero" x="57" y="234" width="43" height="39" label="0" enabled="true"
+		<s:Button id="cero" x="57" y="234" width="43" height="39" label="0" click="ceroclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button id="igual" x="103" y="234" width="43" height="39" label="=" click="igualclick(event)"
+				  enabled="true" fontSize="29"/>
+		<s:Button x="148" y="234" width="43" height="39" label="/" click="divclick(event)" enabled="true"
 				  fontSize="29"/>
-		<s:Button id="igual" x="103" y="234" width="43" height="39" label="=" enabled="true"
-				  fontSize="29"/>
-		<s:Button x="148" y="234" width="43" height="39" label="/" enabled="true" fontSize="29"/>
 	</s:Panel>
 	<s:Panel id="PTeo" x="146" y="273" width="282" height="146" enabled="false"
 			 title="Teorema de Pitágoras">

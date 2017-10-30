@@ -44,22 +44,21 @@ namespace Metodos
             pru = Math.Round(nume1, 2);
         }
 
-        static public void metodo5(double nume1, ref int num, double pru)
-        {
-            nume1 = Math.Truncate(nume1);
-            pru= Math.Round(nume1, 2);
+        static public void metodo5(double nume1, int num, ref double pru)
+        { 
+            pru += Math.Round(nume1, num);
         }
 
-        static public void metodo6(double nume1, ref int num)
+        static public void metodo6(double nume1, int num)
         {
-
+            nume1 += Math.Round(nume1, num);
         }
 
         static void Main(string[] args)
         {
             int option;
-            int num = 0;
-            double numero = 764.783, pru =0;
+            int num = 2;
+            double numero = 764.783, pru = 0;
 
             do
             {
@@ -84,11 +83,12 @@ namespace Metodos
                         Console.WriteLine(pru);
                         break;
                     case 5:
-                       metodo5(numero, ref num , pru);
+                       metodo5(numero, num , ref pru);
                         Console.WriteLine(pru);
                         break;
                     case 6:
-                       metodo6(numero, ref num);
+                       metodo6(numero, num);
+                        Console.WriteLine(numero);
                         break;
                 }
             } while (option != 7);
