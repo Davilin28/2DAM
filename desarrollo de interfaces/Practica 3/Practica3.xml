@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="955" minHeight="600" pageTitle="Hola amigos del youtube">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Button id="preferencia" x="85" y="72" width="74" height="28" label="PULSA"/>
+	<s:TextInput id="texto1" x="179" y="73" width="101" height="28" contentBackgroundColor="#FCF8F8"
+				 prompt="Escriba usuario"/>
+	<s:TextArea x="85" y="118" width="195" editable="false"/>
+	<s:ComboBox x="299" y="122" enabled="true" >
+		<s:ArrayList>
+			<fx:String>hola</fx:String>
+			<fx:String>adios</fx:String>
+		</s:ArrayList>
+	</s:ComboBox>
+	<s:CheckBox x="303" y="155" width="111" height="23" label="Acepta terminos" selected="true"/>
+	<s:Label x="303" y="198" width="142" height="28" fontSize="16" text="Me zuenas" textAlign="center"
+			 verticalAlign="middle"/>
+</s:Application>

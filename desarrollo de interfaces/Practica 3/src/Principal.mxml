@@ -2,7 +2,7 @@
 <s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
 			   xmlns:s="library://ns.adobe.com/flex/spark"
 			   xmlns:mx="library://ns.adobe.com/flex/mx"
-			   minWidth="955" minHeight="600" pageTitle="Calculadora">
+			   width="1125" height="690" minWidth="955" minHeight="600" pageTitle="Calculadora">
 	
 	<fx:Script>
 		<![CDATA[
@@ -19,11 +19,6 @@
 			protected var cat2 : int
 			
 			// Variables para la calculadora
-			protected var general:String 
-			protected var operador : String
-			protected var num1 : int
-			protected var num2 : int
-			protected var control : int
 			
 			// Evento para logearse
 			protected function ClickLogin(event:MouseEvent):void
@@ -34,6 +29,8 @@
 						Log.enabled = false
 						TextLogin.text = ""
 						TextPass.text = ""
+						TextLogin.enabled = false
+						TextPass.enabled = false
 							
 						if(Calc.selected){
 							PCal.enabled = true
@@ -81,9 +78,12 @@
 				Log.enabled = true
 				PCal.enabled = false
 				PTeo.enabled = false
+				TextLogin.enabled = true
+				TextPass.enabled = true
 				Catet1.text = ""
 				Catet2.text = ""
 				ResHipo.text = ""
+				
 				}
 			}
 			
@@ -187,6 +187,12 @@
 			
 			protected function igualclick(event:MouseEvent):void
 			{
+				var general:String 
+				var operador : String
+				var num1  : int
+				var num2  : int
+				var control : int
+				
 				// Coger todo lo que contenga oper.text y guardarlo en general
 				general = oper.text
 			
@@ -210,12 +216,15 @@
 					
 					case "-":
 						result.text = (num1-num2).toString()
+						break
 						
 					case "*":
 						result.text = (num1*num2).toString()
+						break
 						
 					case "/":
 						result.text = (num1/num2).toString()
+						break
 				}
 			}
 		]]>
@@ -225,7 +234,7 @@
 		<s:RadioButtonGroup id="Acciones"/>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:Panel x="59" y="61" width="447" height="224" enabled="true" fontSize="20" title="Acceso">
+	<s:Panel x="156" y="136" width="447" height="224" enabled="true" fontSize="20" title="Acceso">
 		<s:TextInput id="TextLogin" x="10" y="21" width="213" height="44" enabled="true"
 					 fontSize="20" prompt="Login"/>
 		<s:TextInput id="TextPass" x="10" y="73" width="213" height="44" displayAsPassword="true"
@@ -243,7 +252,7 @@
 						   fontSize="25" groupName="Acciones"/>
 		</s:VGroup>
 	</s:Panel>
-	<s:Panel id="PCal" x="510" y="60" width="318" height="442" enabled="false" fontSize="20"
+	<s:Panel id="PCal" x="607" y="136" width="318" height="442" enabled="false" fontSize="20"
 			 title="Calculadora Sencilla">
 		<s:TextInput id="oper" x="10" y="9" width="301" height="56" enabled="false" fontSize="25"
 					 textAlign="right"/>
@@ -282,7 +291,7 @@
 		<s:Button x="234" y="333" width="70" height="60" label="/" click="divclick(event)" enabled="true"
 				  fontSize="29"/>
 	</s:Panel>
-	<s:Panel id="PTeo" x="59" y="293" width="447" height="210" enabled="false" fontSize="20"
+	<s:Panel id="PTeo" x="156" y="368" width="447" height="210" enabled="false" fontSize="20"
 			 title="Teorema de Pitágoras">
 		<s:Button x="299" y="-27" width="140" label="Reiniciar" click="LimpiarClick(event)"/>
 		<s:TextInput id="Catet1" x="299" y="10" width="141" height="51" enabled="true" fontSize="23"
