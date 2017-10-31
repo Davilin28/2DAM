@@ -15,9 +15,8 @@
 			import mx.logging.Log;
 			
 			var resultado : int
-			var numb1 : Number
+			var numb1 : int
 			var valor : String
-			var numb2 : Number
 			
 			protected function ClickLogin(event:MouseEvent):void
 			{
@@ -67,16 +66,20 @@
 			// Evento para Salir
 			protected function Salir_clickHandler(event:MouseEvent):void
 			{
-				// Terminar la salida. No sale 
-				Alert.show('Salir', 'Realmente desea salir?', Alert.OK | Alert.CANCEL, this, Salir_clickHandler)
-				
-					Log.enabled = true
-					PCal.enabled = false
-					PTeo.enabled = false
-					Catet1.text = ""
-					Catet2.text = ""
-					ResHipo.text = ""
-					}
+				Alert.show('Salir', 'Realmente desea salir?', Alert.OK | Alert.CANCEL, this, Salida)
+			}
+			
+			protected function Salida(event:CloseEvent):void
+			{
+				if(event.detail == Alert.OK){
+				Log.enabled = true
+				PCal.enabled = false
+				PTeo.enabled = false
+				Catet1.text = ""
+				Catet2.text = ""
+				ResHipo.text = ""
+				}
+			}
 			
 			// Evento para limpiar panel de pitagoras.
 			protected function LimpiarClick(event:MouseEvent):void
@@ -211,10 +214,9 @@
 			
 			protected function igualclick(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
 				
 				if(valor == "+")
-					result.text = (numb1+Number(oper.text)).toString().valueOf()
+					result.text = String(numb1+Number(oper.text)).toString().valueOf()
 				
 				if(valor == "-")
 					result.text = (numb1-Number(oper.text)).toString().valueOf()

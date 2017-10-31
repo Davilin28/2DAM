@@ -42,12 +42,6 @@ public class Coche {
 		marcha = 0;
 	}
 	
-	public void retirar() 
-	{
-		
-	}
-
-	
 	public String estado()
 	{
 		return "Caballos:" + nCaballos + " Direccion:" + direccion + " Marcha:" + marcha + " Matricula:" + matricula;
