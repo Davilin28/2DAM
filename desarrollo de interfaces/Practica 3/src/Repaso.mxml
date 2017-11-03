@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   width="759" height="450" minWidth="955" minHeight="600" pageTitle="Repaso">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.CloseEvent;
+			import mx.controls.Alert;
+			protected function Aceptar(event:MouseEvent):void
+			{
+				Alert.show('Pruebas','Aceptar', mx.controls.Alert.OK)
+			}
+			
+			protected function exit_app(event:MouseEvent):void
+			{
+				Alert.show('Salir' ,'Realmente desea salir?', Alert.OK | Alert.CANCEL, this, exit_app);
+				
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<s:RadioButtonGroup id="Genero"/>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Image x="32" y="28" width="393" height="388" source="assets/electr.jpg"/>
+	<s:Label x="505" y="86" width="82" height="23" fontSize="17" text="Nombre: " textAlign="center"
+			 verticalAlign="middle"/>
+	<s:TextInput x="598" y="85"/>
+	<s:Label x="508" y="120" width="82" height="23" fontSize="17" text="Apellidos:" textAlign="center"
+			 verticalAlign="middle"/>
+	<s:TextInput x="598" y="121"/>
+	<s:Label x="477" y="152" width="115" height="22" fontSize="13" text="Fecha Nacimiento:" textAlign="center"
+			 verticalAlign="middle"/>
+	<s:Label x="508" y="186" width="82" height="23" fontSize="17" text="Telefono:" textAlign="center"
+			 verticalAlign="middle"/>
+	<s:TextInput x="598" y="183"/>
+	<s:Label x="525" y="217" width="69" height="23" fontSize="17" text="Sexo:" textAlign="center"
+			 verticalAlign="middle"/>
+	<s:CheckBox x="525" y="255" label="Familia Numerosa"/>
+	<s:Label x="433" y="296" width="170" height="25" fontSize="17" text="Situacion Laboral:" textAlign="center"
+			 verticalAlign="middle"/>
+	<s:CheckBox x="654" y="255" label="Carnet Joven"/>
+	<s:ComboBox x="603" y="295" height="27" enabled="true">
+		<s:ArrayList>
+			<fx:String>Paro</fx:String>
+			<fx:String>Trabajando</fx:String>
+		</s:ArrayList>
+	</s:ComboBox>
+	<s:Button x="508" y="366" width="86" height="25" label="Aceptar"
+			  click="Aceptar(event)"/>
+	<s:Button x="644" y="366" width="86" height="25" label="Salir"
+			  click="exit_app(event)"/>
+	<s:VGroup x="602" y="217">
+		<s:RadioButton label="Mujer" groupName="Genero" selected="true"/>
+	</s:VGroup>
+	<s:RadioButton x="659" y="218" label="Hombre" groupName="Genero"/>
+	<mx:DateField x="600" y="152" width="149"/>
+</s:Application>

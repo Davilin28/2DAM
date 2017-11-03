@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="955" minHeight="600" pageTitle="Hola amigos del youtube" >
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.CalendarLayoutChangeEvent;
+			
+			import spark.events.IndexChangeEvent;
+			import spark.events.TextOperationEvent;
+			protected function preferencia_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				texto1.text = "Pulsado"
+				texto1.setStyle("contentBackgroundColor","aqua")
+			}
+			
+			protected function texto1_changeHandler(event:TextOperationEvent):void
+			{
+				// TODO Auto-generated method stub
+				rM.selected = true;
+			}
+			
+			protected function textarea1_changeHandler(event:TextOperationEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
+			protected function checkbox1_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				if(check.selected)
+					{
+						textP.text = "Chequeado";
+					}else
+						textP.text = "No chequeado";
+			}
+			
+			protected function combobox1_changeHandler(event:IndexChangeEvent):void
+			{
+				// TODO Auto-generated method stub
+					textP.text = comboB.selectedItem
+			}
+			
+			protected function radiobutton1_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				setStyle("backgroundColor","red")	
+			}
+			
+			protected function datechooser1_changeHandler(event:CalendarLayoutChangeEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
+			protected function image1_mouseOverHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				textP.text = "Dentro";
+			}
+			
+			protected function image1_mouseOutHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				textP.text = "Fuera";
+			}
+			
+			protected function list1_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				textP.text = lista.selectedIndex.toString()
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<s:RadioButtonGroup id="Animales"/>
+		<s:RadioButtonGroup id="Genero"/>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Button id="preferencia" x="85" y="73" width="74" height="28" label="PULSA"
+			  click="preferencia_clickHandler(event)" enabled="true"/>
+	<s:TextInput id="texto1" x="179" y="73" width="101" height="28"
+				 change="texto1_changeHandler(event)" contentBackgroundColor="#FCF8F8"
+				 prompt="Escriba usuario"/>
+	<s:TextArea id="textP" x="85" y="118" width="195" change="textarea1_changeHandler(event)"
+				editable="false"/>
+	<s:ComboBox id="comboB" x="303" y="104" width="163" change="combobox1_changeHandler(event)"
+				enabled="true">
+		<s:ArrayList>
+			<fx:String>hola</fx:String>
+			<fx:String>adios</fx:String>
+		</s:ArrayList>
+	</s:ComboBox>
+	<s:CheckBox id="check" x="303" y="159" width="111" height="23" label="Acepta terminos"
+				click="checkbox1_clickHandler(event)" selected="true"/>
+	<s:Label x="304" y="69" width="142" height="28" fontSize="16" text="Me zuenas" textAlign="center"
+			 verticalAlign="middle"/>
+	<s:VGroup x="386" y="236" width="118" gap="5" horizontalAlign="left">
+		<s:RadioButton label="Gato" groupName="Animales"/>
+		<s:RadioButton id="pero" label="Perro" click="radiobutton1_clickHandler(event)"
+					   groupName="Animales"/>
+	</s:VGroup>
+	<s:VGroup x="386" y="186" width="64" horizontalAlign="left" verticalAlign="middle">
+		<s:RadioButton id="rH" label="Hombre" groupName="Genero"/>
+		<s:RadioButton id="rM" label="Mujer" groupName="Genero"/>
+	</s:VGroup>
+	<s:Label x="288" y="200" width="90" height="28" fontSize="16" text="Genero: " textAlign="center"
+			 verticalAlign="middle"/>
+	<s:Label x="288" y="240" width="90" height="28" fontSize="16" text="Animales:" textAlign="center"
+			 verticalAlign="middle"/>
+	<mx:DateChooser x="529" y="75" change="datechooser1_changeHandler(event)" enabled="true"
+					showToday="true"/>
+	<mx:DateField x="303" y="135" width="163" height="22" showToday="true"/>
+	<s:Image x="0" y="0" width="89" height="82" mouseOut="image1_mouseOutHandler(event)"
+			 mouseOver="image1_mouseOverHandler(event)" source="assets/PGA_Logo_Header_480x480.png"/>
+	<s:List id="lista" x="88" y="337" width="220" height="76" click="list1_clickHandler(event)">
+		<s:ArrayList >
+			<fx:String>hola</fx:String>
+			<fx:String>adios</fx:String>
+		</s:ArrayList>
+	</s:List>
+</s:Application>

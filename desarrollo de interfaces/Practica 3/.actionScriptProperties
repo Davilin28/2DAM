@@ -15,9 +15,10 @@
   </compiler>
   <applications>
     <application path="Principal.mxml"/>
+    <application path="Prueba.mxml"/>
+    <application path="Repaso.mxml"/>
   </applications>
   <modules/>
   <buildCSSFiles/>
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
 </actionScriptProperties>
-
