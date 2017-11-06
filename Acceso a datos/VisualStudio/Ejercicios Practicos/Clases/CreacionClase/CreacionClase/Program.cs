@@ -31,9 +31,7 @@ namespace CreacionClase
 
             fechas[0].IsBisiesto();
 
-            Imprimir(fechas); // Sacar por pantalla todas las fechas\
-
-  
+            Imprimir(fechas); // Sacar por pantalla todas las fechas
             Console.ReadKey();
 
         }

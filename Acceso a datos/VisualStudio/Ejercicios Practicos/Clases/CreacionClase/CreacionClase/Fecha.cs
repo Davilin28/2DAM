@@ -69,24 +69,23 @@ namespace CreacionClase
 
         public void SumesMes()
         {
-            mes++;
-        }
-
-        public void IsBisiesto()
-        {
-            if (Anio % 4 == 0)
-            {
-                Console.WriteLine("El anio "+ anio + " es bisiesto");
-                Console.WriteLine("");
-            }
+            if (mes < 12)
+                mes++;
             else
-                Console.WriteLine("El anio "+ anio + " no es bisiesto");
-                Console.WriteLine("");
+            {
+                mes = 1;
+                anio++;
+            }
         }
 
-        public void TotalDias()
+        public bool IsBisiesto()
         {
-                   
+            return (Anio % 4 == 0);
+        }
+
+        public void ContarDias()
+        {
+
         }
     }
 }

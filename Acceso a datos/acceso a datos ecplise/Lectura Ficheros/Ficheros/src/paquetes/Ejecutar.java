@@ -14,7 +14,7 @@ public class Ejecutar {
 
 	public static void main(String[] args) {
 		
-		String[] nombres = {"Jose","Pepe","Ana","Luis Alberto","Jose Luis","Lucia","Alberto Quesada"};
+		String[] nombres = {"Jose","Pepe","Ana","Luis Alberto","Jose Luis"};
 		
 		Funciones.escribirFichero(nombres);
 		Funciones.inicializarTabla(nombres);

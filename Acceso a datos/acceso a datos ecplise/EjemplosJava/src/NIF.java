@@ -27,6 +27,8 @@ public class NIF {
 		
 		int resto = numero & 23;
 		letra = tabla[resto];
+		
+		System.out.println(letra);
 	}
 	
 }
