@@ -83,9 +83,35 @@ namespace CreacionClase
             return (Anio % 4 == 0);
         }
 
-        public void ContarDias()
+        public int ContarDias()
         {
+            // Tabla con los dias de cada mes 
+            //    0 (Enero)   -> 31, 
+            //    1 (Febrero) -> 28/29,  
+            int nDias = 0;
+            int[] tablaMes = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
+            if (IsBisiesto())
+                tablaMes[1] = 29;
+            nDias = dia;
+            for (int i = 0; i <= mes - 2; i++)
+                nDias += tablaMes[i];
+            return nDias;
+        }
+
+        public bool EsMayor(Fecha f)
+        {
+            if ((anio > f.anio) ||
+                  ((anio == f.anio) && (mes > f.mes)) ||
+                  ((anio == f.anio) && (mes == f.mes) && (dia == f.dia)))
+                return true;
+            else
+                return false;
+        }
+
+        public string Escribe()
+        {
+            return "Fecha: " + dia + "/" + mes + "/" + anio;
         }
     }
 }
