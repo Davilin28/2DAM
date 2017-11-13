@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Palindrome
 {
-    
+    /*
+     Crear un programa que lea una frase por pantalla y determine si la frase se trata de un palindromo.
+    */
     class Program
     {
         const int palindromo = 1;
