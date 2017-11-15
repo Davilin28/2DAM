@@ -64,7 +64,6 @@ public class Principal {
 		}
 	}
 
-	
 	public static void imprimirFichero(String[] nombres) {
 		System.out.println("Contenido de la tabla: ");
 		System.out.println("");
@@ -72,7 +71,7 @@ public class Principal {
 			System.out.println("Nombre: " + nombres[i]);
 		espera();
 	}
-	
+
 	public static void inicializarTabla(String[] nombres) {
 		for (int i = 0; i < nombres.length; i++) {
 			nombres[i] = "";
