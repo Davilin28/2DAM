@@ -2,9 +2,9 @@ package personas;
 
 public class Persona {
 
-	private String nombre = "";
-	private String Apellidos = "";
-	private int edad = 0;
+	private String nombre;
+	private String Apellidos;
+	private int edad;
 
 	public Persona(String nombre, String apellidos, int edad) {
 		this.nombre = nombre;

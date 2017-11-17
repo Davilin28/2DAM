@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
 	@SuppressWarnings("resource")
-	public static void opciones(String[] aux) {
+	public static void opciones(Persona[] persona) {
 		Scanner teclado = new Scanner(System.in);
 		int opcion = 0;
 
@@ -22,22 +22,22 @@ public class Menu {
 			switch (opcion) {
 
 			case 1: {
-				Principal.escribir(aux);
+				Funciones.escribir(persona);
 				break;
 			}
 
 			case 2: {
-				Principal.leerFichero(aux);
+				Funciones.leerFichero(persona);
 				break;
 			}
 
 			case 3: {
-				Principal.imprimirFichero(aux);
+				Funciones.imprimirFichero(persona);
 				break;
 			}
 
 			case 4: {
-				Principal.inicializarTabla(aux);
+				Funciones.inicializarTabla(persona);
 				break;
 			}
 
@@ -48,7 +48,7 @@ public class Menu {
 
 			default: {
 				System.out.println("Opcion no es correcta");
-				Principal.espera();
+				Funciones.espera();
 			}
 			}
 		} while (opcion != 8);
