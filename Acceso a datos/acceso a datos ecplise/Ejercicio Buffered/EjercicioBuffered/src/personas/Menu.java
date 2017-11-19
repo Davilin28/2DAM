@@ -21,35 +21,24 @@ public class Menu {
 
 			switch (opcion) {
 
-			case 1: {
+			case 1:
 				Funciones.escribir(persona);
 				break;
-			}
-
-			case 2: {
+			case 2:
 				Funciones.leerFichero(persona);
 				break;
-			}
-
-			case 3: {
+			case 3:
 				Funciones.imprimirFichero(persona);
 				break;
-			}
-
-			case 4: {
+			case 4:
 				Funciones.inicializarTabla(persona);
 				break;
-			}
-
-			case 8: {
+			case 8:
 				System.out.println("Salida");
 				break;
-			}
-
-			default: {
+			default:
 				System.out.println("Opcion no es correcta");
 				Funciones.espera();
-			}
 			}
 		} while (opcion != 8);
 	}

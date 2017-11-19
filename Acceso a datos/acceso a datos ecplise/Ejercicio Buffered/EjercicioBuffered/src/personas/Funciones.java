@@ -64,11 +64,11 @@ public class Funciones {
 		for (int i = 0; i < persona.length; i++) {
 			String laedad = String.valueOf(persona[i].getEdad());
 			if (laedad.equals("0")) {
-				System.out.println("Nombre: " + String.valueOf(persona[i].getNombre()) + " Apellidos: "
-						+ String.valueOf(persona[i].getApellidos()) + " Edad: ");
+				System.out.println("Nombre: " + persona[i].getNombre() + " Apellidos: "
+						+ persona[i].getApellidos() + " Edad: ");
 			} else {
-				System.out.println("Nombre: " + String.valueOf(persona[i].getNombre()) + " Apellidos: "
-						+ String.valueOf(persona[i].getApellidos()) + " Edad: " + String.valueOf(persona[i].getEdad()));
+				System.out.println("Nombre: " + persona[i].getNombre() + " Apellidos: "
+						+ persona[i].getApellidos() + " Edad: " + String.valueOf(persona[i].getEdad()));
 			}
 		}
 		espera();

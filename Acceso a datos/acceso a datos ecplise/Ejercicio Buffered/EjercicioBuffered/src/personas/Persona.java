@@ -3,12 +3,12 @@ package personas;
 public class Persona {
 
 	private String nombre;
-	private String Apellidos;
+	private String apellidos;
 	private int edad;
 
 	public Persona(String nombre, String apellidos, int edad) {
 		this.nombre = nombre;
-		Apellidos = apellidos;
+		this.apellidos = apellidos;
 		this.edad = edad;
 	}
 
@@ -21,11 +21,11 @@ public class Persona {
 	}
 
 	public String getApellidos() {
-		return Apellidos;
+		return apellidos;
 	}
 
 	public void setApellidos(String apellidos) {
-		Apellidos = apellidos;
+		this.apellidos = apellidos;
 	}
 
 	public int getEdad() {

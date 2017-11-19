@@ -14,6 +14,7 @@ namespace Apuestas
     public partial class Form1 : Form
     {
         ArrayList check = new ArrayList();
+        int contador = 0;
         public Form1()
         {
             InitializeComponent();
@@ -76,6 +77,24 @@ namespace Apuestas
         private void click(object sender, EventArgs e)
         {
           //Random aleatorio = new Random();
+        }
+
+        private void seleccion(object sender, EventArgs e)
+        {
+            if (checkBox1)
+            {
+                contador += 1;
+            }
+
+            if (checkBox2.Checked = 0)
+            {
+                contador += 1;
+            }
+
+            if (contador > 2)
+            {
+                Nm.Text = contador.ToString();
+            }
         }
     }
 }
