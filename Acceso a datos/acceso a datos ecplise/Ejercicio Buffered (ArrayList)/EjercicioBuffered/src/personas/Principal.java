@@ -1,6 +1,5 @@
 package personas;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,6 +20,7 @@ public class Principal {
 		Scanner leer = new Scanner(System.in);
 		int numeroPersonas = 1;
 		ArrayList<Persona> listaPersonas = new ArrayList<Persona>();
+		
 		for (int i = 0; i < numeroPersonas; i++) {
 			Persona persona = new Persona(); // Creamos una persona
 			System.out.println("Escribir Nombre: " + i);

@@ -14,8 +14,8 @@ public class Funciones {
 
 			// 2. Insertamos los datos dentro del fichero recorriendolo con un for.
 			for (int i = 0; i < listaPersonas.size(); i++) {
-				ficheroEscritura.write(listaPersonas.get(i).getNombre() + "\n" + listaPersonas.get(i).getApellidos()
-						+ "\n" + listaPersonas.get(i).getEdad());
+				ficheroBuffer.write(listaPersonas.get(i).getNombre() + "\n" + listaPersonas.get(i).getApellidos() + "\n"
+						+ listaPersonas.get(i).getEdad());
 				ficheroBuffer.newLine();
 			}
 
@@ -64,7 +64,8 @@ public class Funciones {
 		for (int j = 0; j < listaPersonas.size(); j++) {// ahora imprimiremos las personas de nuestro ArrayList
 			System.out.println("Persona numero " + j);
 			Persona persona = (Persona) listaPersonas.get(j);
-			System.out.println("Nombre: " + persona.getNombre() +" Apellidos: " + persona.getApellidos() + " Edad: " + persona.getEdad());
+			System.out.println("Nombre: " + persona.getNombre() + " Apellidos: " + persona.getApellidos() + " Edad: "
+					+ persona.getEdad());
 		}
 		espera();
 	}
@@ -79,15 +80,45 @@ public class Funciones {
 
 	public static void modificarPersona(ArrayList<Persona> listaPersonas) {
 		Scanner seleccionar = new Scanner(System.in);
-
+		Scanner leer = new Scanner(System.in);
+		imprimirPosicion(listaPersonas);
+		System.out.println("Modificar usuario: ");
+		int opcion = 0;
+		opcion = seleccionar.nextInt();
+		
+		System.out.println("Escribir Nombre: ");
+		listaPersonas.get(opcion).setNombre(leer.nextLine());
+		System.out.println("Escribir Apellido ");
+		listaPersonas.get(opcion).setApellidos(leer.nextLine());
+		System.out.println("Escribir Edad ");
+		listaPersonas.get(opcion).setEdad(Integer.parseInt(leer.nextLine()));
 	}
 
 	public static void agregarPersona(ArrayList<Persona> listaPersonas) {
-
+		Scanner leer = new Scanner(System.in);
+		Persona persona = new Persona();
+		System.out.println("Agregar usuario: ");
+		System.out.println("Escribir Nombre: ");
+		persona.setNombre(leer.nextLine());
+		System.out.println("Escribir Apellido ");
+		persona.setApellidos(leer.nextLine());
+		System.out.println("Escribir Edad ");
+		persona.setEdad(Integer.parseInt(leer.nextLine()));
+		listaPersonas.add(persona);
 	}
 
 	public static void borrarPersona(ArrayList<Persona> listaPersonas) {
-
+		Scanner seleccionar = new Scanner(System.in);
+		imprimirPosicion(listaPersonas);
+		System.out.println("Que usuario desea eliminar: ");
+		int opcion = 0;
+		opcion = seleccionar.nextInt();
+		listaPersonas.remove(opcion);
+	}
+	
+	public static void imprimirPosicion(ArrayList<Persona> listaPersonas) {
+		for(int i=0;i<listaPersonas.size();i++)
+			System.out.println("Usuario: "+ i + " "+listaPersonas.get(i).getNombre());
 	}
 
 	public static void espera() {

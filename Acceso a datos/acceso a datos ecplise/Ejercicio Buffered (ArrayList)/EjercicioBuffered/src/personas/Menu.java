@@ -16,6 +16,9 @@ public class Menu {
 			System.out.println("2.- Leer Fichero.");
 			System.out.println("3.- Escribir Pantalla.");
 			System.out.println("4.- Vaciar estructura.");
+			System.out.println("5.- Modificar persona.");
+			System.out.println("6.- Agregar Persona.");
+			System.out.println("7.- Borrar persona.");
 			System.out.println("8.- Salir.");
 
 			opcion = teclado.nextInt();
