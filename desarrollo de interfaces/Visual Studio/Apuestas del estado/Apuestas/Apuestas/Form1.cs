@@ -1,41 +1,40 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace Apuestas
 {
     public partial class Form1 : Form
     {
-        ArrayList check = new ArrayList();
-        int contador = 0;
+        Random random = new Random();
+        private int iclick;
+        ArrayList point = new ArrayList();
+       
+
         public Form1()
         {
             InitializeComponent();
-
-            // Crear el arraylist de checkbox
-            check.Add(checkBox1);
-            check.Add(checkBox2);
-            check.Add(checkBox3);
-            check.Add(checkBox4);
-            check.Add(checkBox5);
-            check.Add(checkBox6);
-            check.Add(checkBox7);
-            check.Add(checkBox8);
-            check.Add(checkBox9);
-            check.Add(checkBox10);
-            check.Add(checkBox11);
-            check.Add(checkBox12);
-            check.Add(checkBox13);
-            check.Add(checkBox14);
-            check.Add(checkBox15);
-            check.Add(checkBox16);
+            iclick = 0;
+            point.Add(checkBox1);
+            point.Add(checkBox2);
+            point.Add(checkBox3);
+            point.Add(checkBox4);
+            point.Add(checkBox5);
+            point.Add(checkBox6);
+            point.Add(checkBox7);
+            point.Add(checkBox8);
+            point.Add(checkBox9);
+            point.Add(checkBox10);
+            point.Add(checkBox11);
+            point.Add(checkBox12);
+            point.Add(checkBox13);
+            point.Add(checkBox14);
+            point.Add(checkBox15);
+            point.Add(checkBox16);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,6 +48,11 @@ namespace Apuestas
                 Val.Enabled = true;
                 Nm.Enabled = true;
                 date.Enabled = true;
+
+                for (int iCont = 1; iCont <= 16; iCont++)
+                {
+                    
+                }
             }
 
             // Si esta seleccionada multiple
@@ -74,27 +78,15 @@ namespace Apuestas
             }
         }
 
-        private void click(object sender, EventArgs e)
+        private void TMClick(object sender, EventArgs e)
         {
-          //Random aleatorio = new Random();
+            Nm.Text = random.Next(1, 10).ToString();
+
         }
 
-        private void seleccion(object sender, EventArgs e)
+        private void TAClick(object sender, EventArgs e)
         {
-            if (checkBox1)
-            {
-                contador += 1;
-            }
-
-            if (checkBox2.Checked = 0)
-            {
-                contador += 1;
-            }
-
-            if (contador > 2)
-            {
-                Nm.Text = contador.ToString();
-            }
+            Nm.Text = random.Next(1, 10).ToString();      
         }
     }
 }
