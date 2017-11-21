@@ -1,0 +1,18 @@
+c:\users\cfgs\documents\visual studio 2015\Projects\Prueba\Prueba\bin\Debug\Prueba.exe.config
+C:\Users\CFGS\documents\visual studio 2015\Projects\Prueba\Prueba\bin\Debug\Prueba.exe
+C:\Users\CFGS\documents\visual studio 2015\Projects\Prueba\Prueba\bin\Debug\Prueba.pdb
+C:\Users\CFGS\documents\visual studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
+C:\Users\CFGS\documents\visual studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.Form1.resources
+C:\Users\CFGS\documents\visual studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.Properties.Resources.resources
+C:\Users\CFGS\documents\visual studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.csproj.GenerateResource.Cache
+C:\Users\CFGS\documents\visual studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.exe
+C:\Users\CFGS\documents\visual studio 2015\Projects\Prueba\Prueba\obj\Debug\Prueba.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Prueba\Prueba\bin\Debug\Prueba.exe.config
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Prueba\Prueba\obj\Debug\Prueba.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Prueba\Prueba\obj\Debug\Prueba.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Prueba\Prueba\bin\Debug\Prueba.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Prueba\Prueba\bin\Debug\Prueba.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Prueba\Prueba\obj\Debug\Prueba.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Prueba\Prueba\obj\Debug\Prueba.Form1.resources
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Prueba\Prueba\obj\Debug\Prueba.Properties.Resources.resources
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Prueba\Prueba\obj\Debug\Prueba.csproj.GenerateResource.Cache

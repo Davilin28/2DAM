@@ -61,9 +61,9 @@ public class Funciones {
 	public static void imprimirFichero(ArrayList<Persona> listaPersonas) {
 		System.out.println("Contenido de la tabla: ");
 		System.out.println("");
-		for (int j = 0; j < listaPersonas.size(); j++) {// ahora imprimiremos las personas de nuestro ArrayList
-			System.out.println("Persona numero " + j);
-			Persona persona = (Persona) listaPersonas.get(j);
+		for (int i = 0; i < listaPersonas.size(); i++) {// ahora imprimiremos las personas de nuestro ArrayList
+			System.out.println("Persona numero " + i);
+			Persona persona = (Persona) listaPersonas.get(i);
 			System.out.println("Nombre: " + persona.getNombre() + " Apellidos: " + persona.getApellidos() + " Edad: "
 					+ persona.getEdad());
 		}
