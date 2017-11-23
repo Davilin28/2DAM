@@ -57,9 +57,9 @@
             this.Lista = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.final = new System.Windows.Forms.TextBox();
             this.Salir = new System.Windows.Forms.Button();
             this.Apostar = new System.Windows.Forms.Button();
-            this.final = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -416,16 +416,26 @@
             this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(441, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(186, 225);
+            this.groupBox2.Size = new System.Drawing.Size(215, 225);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "RESGUARDO";
             // 
+            // final
+            // 
+            this.final.Location = new System.Drawing.Point(16, 26);
+            this.final.Multiline = true;
+            this.final.Name = "final";
+            this.final.ReadOnly = true;
+            this.final.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.final.Size = new System.Drawing.Size(178, 135);
+            this.final.TabIndex = 2;
+            // 
             // Salir
             // 
-            this.Salir.Location = new System.Drawing.Point(96, 173);
+            this.Salir.Location = new System.Drawing.Point(111, 173);
             this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(72, 40);
+            this.Salir.Size = new System.Drawing.Size(83, 40);
             this.Salir.TabIndex = 1;
             this.Salir.Text = "Salir";
             this.Salir.UseVisualStyleBackColor = true;
@@ -435,25 +445,17 @@
             // 
             this.Apostar.Location = new System.Drawing.Point(16, 173);
             this.Apostar.Name = "Apostar";
-            this.Apostar.Size = new System.Drawing.Size(74, 40);
+            this.Apostar.Size = new System.Drawing.Size(78, 40);
             this.Apostar.TabIndex = 0;
             this.Apostar.Text = "Apostar";
             this.Apostar.UseVisualStyleBackColor = true;
             this.Apostar.Click += new System.EventHandler(this.Apostar_Click);
             // 
-            // final
-            // 
-            this.final.Location = new System.Drawing.Point(16, 26);
-            this.final.Multiline = true;
-            this.final.Name = "final";
-            this.final.Size = new System.Drawing.Size(152, 135);
-            this.final.TabIndex = 2;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 255);
+            this.ClientSize = new System.Drawing.Size(664, 255);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
