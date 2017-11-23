@@ -1,0 +1,6 @@
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Ejercicio ProgramaTV\ConsoleApplicationProgramaTV\bin\Debug\ConsoleApplicationProgramaTV.exe.config
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Ejercicio ProgramaTV\ConsoleApplicationProgramaTV\bin\Debug\ConsoleApplicationProgramaTV.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Ejercicio ProgramaTV\ConsoleApplicationProgramaTV\bin\Debug\ConsoleApplicationProgramaTV.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Ejercicio ProgramaTV\ConsoleApplicationProgramaTV\obj\Debug\ConsoleApplicationProgramaTV.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Ejercicio ProgramaTV\ConsoleApplicationProgramaTV\obj\Debug\ConsoleApplicationProgramaTV.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Ejercicio ProgramaTV\ConsoleApplicationProgramaTV\obj\Debug\ConsoleApplicationProgramaTV.pdb
