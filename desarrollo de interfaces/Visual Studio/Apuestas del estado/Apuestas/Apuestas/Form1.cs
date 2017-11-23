@@ -12,7 +12,6 @@ namespace Apuestas
         Random random = new Random();
         ArrayList listchek = new ArrayList();
         int count = 0;
-        int total;
 
 
         public Form1()
@@ -35,7 +34,7 @@ namespace Apuestas
             listchek.Add(checkBox15);
             listchek.Add(checkBox16);
         }
-        private void clickapl(object sender, EventArgs e)
+        private void SelectLAP(object sender, EventArgs e)
         {
             TM.Enabled = true;
             TA.Enabled = true;
@@ -43,125 +42,46 @@ namespace Apuestas
             Val.Enabled = true;
             Nm.Enabled = true;
             date.Enabled = true;
+            groupBox2.Enabled = true;
 
-            //Nm.Text = random.Next(1, 11).ToString();
+            // Nm.Text = random.Next(1, 11).ToString();
 
             // Si esta seleccionada sencilla
             if (LApu.SelectedIndex == 0)
             {
-                count = 4;
+                
             }
 
             // Si esta seleccionada multiple
             if (LApu.SelectedIndex == 1)
             {
-                count = 6;
+
             }
 
             // Si esta seleccionada extrema
             if (LApu.SelectedIndex == 2)
             {
-                count = 8;
+
             }
+        }
+
+        private void click1(object sender, EventArgs e)
+        {
+        }
+
+        private void click2(object sender, EventArgs e)
+        {
         }
 
         private void TMClick(object sender, EventArgs e)
         {
-         //   Nm.Text = random.Next(1, 11).ToString();
+           // Nm.Text = random.Next(1, 11).ToString();
         }
 
         private void TAClick(object sender, EventArgs e)
         {
           //  Nm.Text = random.Next(1, 11).ToString();
         }
-
-        private void Val_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TM_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TA_CheckedChanged(object sender, EventArgs e)
-        { 
-
-           
-        }
-
-        private void check1(object sender, EventArgs e)
-        {
-            
-            int selection = LApu.SelectedIndex;
-            if ((selection == 0 && count != 0) || (selection == 1 && count != 0) || (selection == 2 && count != 0))
-            {
-                if (checkBox1.Checked == true)
-                {
-                    count--;
-                }
-                else
-                    count++;
-            }
-        }
-
-        private void check2(object sender, EventArgs e)
-        {
-            int selection = LApu.SelectedIndex;
-            if ((selection == 0 && count != 0) || (selection == 1 && count != 0) || (selection == 2 && count != 0))
-            {
-                if (checkBox2.Checked == true)
-                {
-                    count--;
-                }
-                else
-                    count++;
-            }
-        }
-
-        private void check3(object sender, EventArgs e)
-        {
-            int selection = LApu.SelectedIndex;
-            if ((selection == 0 && count != 0) || (selection == 1 && count != 0) || (selection == 2 && count != 0))
-            {
-                if (checkBox3.Checked == true)
-                {
-                    count--;
-                }
-                else
-                    count++;
-            }
-        }
-
-        private void check4(object sender, EventArgs e)
-        {
-            int selection = LApu.SelectedIndex;
-            if ((selection == 0 && count != 0) || (selection == 1 && count != 0) || (selection == 2 && count != 0))
-            {
-                if (checkBox4.Checked == true)
-                {
-                    count--;
-                }
-                else
-                    count++;
-            }
-        }
-
-        private void check5(object sender, EventArgs e)
-        {
-            int selection = LApu.SelectedIndex;
-            if ((selection == 0 && count != 0) || (selection == 1 && count != 0) || (selection == 2 && count != 0))
-            {
-                if (checkBox5.Checked == true)
-                {
-                    count--;
-                }
-                else
-                    count++;
-            }
-        }
-
 
         private void date_ValueChanged(object sender, EventArgs e)
         {
