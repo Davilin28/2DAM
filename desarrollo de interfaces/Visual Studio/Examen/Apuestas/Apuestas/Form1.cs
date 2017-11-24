@@ -220,153 +220,82 @@ namespace Apuestas
 
         private void Valida_Click(object sender, EventArgs e)
         {
-            groupBox2.Enabled = true;
-            final.Text += "Sorteo del dia: " + Cal.Text + "\t" +"\t";
-            for (int i = 0; i < listchek.Count; i++)
-            {
-                if (((CheckBox)listchek[i]).Checked == true)
-                {
-                    final.Text += "Tus Numeros son: " + ((CheckBox)listchek[i]).Text + "\n";
-                }
-            }
-            final.Text += "Tu Reitengro es: " + Rein.Text + " ";
+                    groupBox2.Enabled = true;
+                    final.Text += "Sorteo del dia: " + Cal.Text + "\t" + "\t";
 
-            if (rM.Checked)
-            {
-                for (int i = 0; i < listchek.Count; i++)
-                {
-                    ((CheckBox)listchek[i]).Checked = false;
-                }
-            }
+                    for (int j = 0; j < listchek.Count; j++)
+                    {
+                        if (((CheckBox)listchek[j]).Checked == true)
+                        {
+                            final.Text += "Tus Numeros son: " + ((CheckBox)listchek[j]).Text + "\n";
+                        }
+                    } 
+            final.Text += "Tu Reitengro es: " + Rein.Text + " ";
         }
 
         private void click1(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click2(object sender, EventArgs e)
         {
-            if (checkBox2.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click3(object sender, EventArgs e)
         {
-            if (checkBox3.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click4(object sender, EventArgs e)
         {
-            if (checkBox4.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click5(object sender, EventArgs e)
         {
-            if (checkBox5.Checked)
-                numSel++;
-            else
-                numSel--;
 
         }
 
         private void click6(object sender, EventArgs e)
         {
-            if (checkBox6.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click7(object sender, EventArgs e)
         {
-            if (checkBox7.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click8(object sender, EventArgs e)
         {
-            if (checkBox8.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click9(object sender, EventArgs e)
         {
-            if (checkBox9.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click10(object sender, EventArgs e)
         {
-            if (checkBox10.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click11(object sender, EventArgs e)
         {
-            if (checkBox11.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click12(object sender, EventArgs e)
         {
-            if (checkBox12.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click13(object sender, EventArgs e)
         {
-            if (checkBox13.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click14(object sender, EventArgs e)
         {
-            if (checkBox14.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void click15(object sender, EventArgs e)
         {
-            if (checkBox15.Checked)
-                numSel++;
-            else
-            numSel--;
         }
 
         private void click16(object sender, EventArgs e)
         {
-            if (checkBox16.Checked)
-                numSel++;
-            else
-                numSel--;
         }
 
         private void Apostar_Click(object sender, EventArgs e)
@@ -377,6 +306,7 @@ namespace Apuestas
 
         private void Salir_Click(object sender, EventArgs e)
         {
+            Form2 cerrar = new Form2();
             string mensaje = "¿Realmente desea salir?";
             string titulo = "Salir";
             MessageBoxButtons opciones = MessageBoxButtons.YesNo;
@@ -384,7 +314,7 @@ namespace Apuestas
 
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                this.Close();
+               Application.Exit();
             }
         }
     }
