@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace Apuestas
 {
@@ -11,9 +15,7 @@ namespace Apuestas
     {
         Random random = new Random();
         ArrayList listchek = new ArrayList();
-        int count = 0;
-
-
+        int numMax = 0, numSel = 0;
         public Form1()
         {
             InitializeComponent();
@@ -34,35 +36,201 @@ namespace Apuestas
             listchek.Add(checkBox15);
             listchek.Add(checkBox16);
         }
-        private void SelectLAP(object sender, EventArgs e)
+
+        private void Lista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TM.Enabled = true;
-            TA.Enabled = true;
-            Num.Enabled = true;
-            Val.Enabled = true;
-            Nm.Enabled = true;
-            date.Enabled = true;
-            groupBox2.Enabled = true;
+            
+            Rein.Text = random.Next(1, 11).ToString();
 
-            // Nm.Text = random.Next(1, 11).ToString();
-
-            // Si esta seleccionada sencilla
-            if (LApu.SelectedIndex == 0)
+            if (Lista.SelectedIndex != -1)
             {
-                
+                if (rA.Checked)
+                {
+                    switch (Lista.SelectedIndex)
+                    {
+                        case 0:
+                            for (int i = 0; i < 16; i++)
+                                ((CheckBox)listchek[i]).Checked = false;
+                            numSel = 0;
+                            numMax = 4;
+                            automatico();
+                            numRein();
+                            break;
+                        case 1:
+                            for (int i = 0; i < 16; i++)
+                                ((CheckBox)listchek[i]).Checked = false;
+                            numSel = 0;
+                            numMax = 6;
+                            automatico();
+                            numRein();
+                            break;
+                        case 2:
+                            for (int i = 0; i < 16; i++)
+                                ((CheckBox)listchek[i]).Checked = false;
+                            numSel = 0;
+                            numMax = 8;
+                            automatico();
+                            numRein();
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (Lista.SelectedIndex)
+                    {
+                        case 0:
+                            numMax = 4;
+                            act();
+                            numRein();
+                            break;
+                        case 1:
+                            numMax = 6;
+                            act();
+                            numRein();
+                            break;
+                        case 2:
+                            numMax = 8;
+                            act();
+                            numRein();
+                            break;
+                    }
+                }
+                if (rM.Checked)
+                    switch (Lista.SelectedIndex)
+                    {
+                        case 0:
+                            for (int i = 0; i < 16; i++)
+                                ((CheckBox)listchek[i]).Checked = false;
+                            numSel = 0;
+                            numMax = 4;
+                            manual();
+                            numRein();
+                            break;
+                        case 1:
+                            for (int i = 0; i < 16; i++)
+                                ((CheckBox)listchek[i]).Checked = false;
+                            numSel = 0;
+                            numMax = 6;
+                            manual();
+                            numRein();
+                            break;
+                        case 2:
+                            for (int i = 0; i < 16; i++)
+                                ((CheckBox)listchek[i]).Checked = false;
+                            numSel = 0;
+                            numMax = 8;
+                            manual();
+                            numRein();
+                            break;
+                    }
+                else
+                {
+                    switch (Lista.SelectedIndex)
+                    {
+                        case 0:
+                            numMax = 4;
+                            act();
+                            numRein();
+                            break;
+                        case 1:
+                            numMax = 6;
+                            act();
+                            numRein();
+                            break;
+                        case 2:
+                            numMax = 8;
+                            act();
+                            numRein();
+                            break;
+                    }
+                }
             }
+        }
 
-            // Si esta seleccionada multiple
-            if (LApu.SelectedIndex == 1)
+        private void rM_CheckedChanged(object sender, EventArgs e)
+        {
+            Rein.Text = random.Next(1, 11).ToString();
+            if (rM.Checked && Lista.SelectedIndex != -1)
             {
-
+                act();
             }
+            manual();
+        }
 
-            // Si esta seleccionada extrema
-            if (LApu.SelectedIndex == 2)
+        private void rA_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rA.Checked)
+                automatico();
+        }
+
+        public void act()
+        {
+            rM.Enabled = true;
+            rA.Enabled = true;
+            Rein.Enabled = true;
+            Valida.Enabled = true;
+            Cal.Enabled = true;
+
+            for (int i = 0; i < listchek.Count; i++)
             {
-
+                ((CheckBox)listchek[i]).Enabled = true;
             }
+            for (int i = 0; i < listchek.Count; i++)
+            {
+                ((CheckBox)listchek[i]).Checked = false;
+            }
+        }
+
+        private void automatico()
+        {
+            numSel = 0;
+            for (int i = 0; i < listchek.Count; i++)
+                ((CheckBox)listchek[i]).Enabled = false;
+            while (numSel < numMax)
+            {
+                int aux = random.Next(0, 16);
+                if (((CheckBox)listchek[aux]).Checked == false)
+                {
+                    ((CheckBox)listchek[aux]).Checked = true;
+                    numSel++;
+                }
+            }
+        }
+
+        private void manual()
+        {
+               
+        }
+
+        private void numRein()
+        {
+            Rein.Text = random.Next(1, 11).ToString();
+        }
+
+        private void Cal_ValueChanged(object sender, EventArgs e)
+        {
+            if (Cal.Value < DateTime.Today)
+            {
+                string mensaje = "No se puede participar en un sorteo anterior";
+                string titulo = "Error en datos";
+                MessageBoxButtons opciones = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(mensaje, titulo, opciones, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Valida_Click(object sender, EventArgs e)
+        {
+                    groupBox2.Enabled = true;
+                    final.Text += "Sorteo del dia: " + Cal.Text + "\t" + "\t";
+
+                    for (int j = 0; j < listchek.Count; j++)
+                    {
+                        if (((CheckBox)listchek[j]).Checked == true)
+                        {
+                            final.Text += "Tus Numeros son: " + ((CheckBox)listchek[j]).Text + "\n";
+                        }
+                    } 
+            final.Text += "Tu Reitengro es: " + Rein.Text + " ";
         }
 
         private void click1(object sender, EventArgs e)
@@ -73,25 +241,67 @@ namespace Apuestas
         {
         }
 
-        private void TMClick(object sender, EventArgs e)
+        private void click3(object sender, EventArgs e)
         {
-           // Nm.Text = random.Next(1, 11).ToString();
         }
 
-        private void TAClick(object sender, EventArgs e)
+        private void click4(object sender, EventArgs e)
         {
-          //  Nm.Text = random.Next(1, 11).ToString();
         }
 
-        private void date_ValueChanged(object sender, EventArgs e)
+        private void click5(object sender, EventArgs e)
         {
-            if (date.Value < DateTime.Today)
-            {
-                string mensaje = "No se puede participar en un sorteo anterior";
-                string titulo = "Error en datos";
-                MessageBoxButtons opciones = MessageBoxButtons.OK;
-                DialogResult result = MessageBox.Show(mensaje, titulo, opciones, MessageBoxIcon.Error);
-            }
+
+        }
+
+        private void click6(object sender, EventArgs e)
+        {
+        }
+
+        private void click7(object sender, EventArgs e)
+        {
+        }
+
+        private void click8(object sender, EventArgs e)
+        {
+        }
+
+        private void click9(object sender, EventArgs e)
+        {
+        }
+
+        private void click10(object sender, EventArgs e)
+        {
+        }
+
+        private void click11(object sender, EventArgs e)
+        {
+        }
+
+        private void click12(object sender, EventArgs e)
+        {
+        }
+
+        private void click13(object sender, EventArgs e)
+        {
+        }
+
+        private void click14(object sender, EventArgs e)
+        {
+        }
+
+        private void click15(object sender, EventArgs e)
+        {
+        }
+
+        private void click16(object sender, EventArgs e)
+        {
+        }
+
+        private void Apostar_Click(object sender, EventArgs e)
+        {
+            final.Text = "";
+            groupBox2.Enabled = false;
         }
 
         private void Salir_Click(object sender, EventArgs e)
@@ -103,7 +313,7 @@ namespace Apuestas
 
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                this.Close();
+               Application.Exit();
             }
         }
     }

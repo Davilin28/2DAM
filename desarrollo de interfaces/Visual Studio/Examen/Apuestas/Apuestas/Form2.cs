@@ -15,6 +15,7 @@ namespace Apuestas
         string login = "";
         string password = "";
         string correcto = "";
+        string acierto = "";
         Form1 abrirLO = new Form1();
         DateTime hoy = DateTime.Today; //hoy
 
@@ -27,6 +28,14 @@ namespace Apuestas
         {
             login = Remail.Text;
             password = Rpass.Text;
+
+            for (int j = 0; j < password.Length; j++)
+            {
+                if(password[j] == '+' || password[j] == '/' || password[j] == '-' || password[j] == '*')
+                {
+                    acierto = "c";
+                }
+            }
 
             if (login.ToString().Equals("") || password.ToString().Equals("") || imag.Image == null)
             {
@@ -44,8 +53,8 @@ namespace Apuestas
                         correcto = "bien";
                     }
                 }
-                if (correcto.Equals("bien"))
-                {
+                if (correcto.Equals("bien")) {
+                    if (acierto.Equals("c")) { 
     
                     string mensage = "Registro correcto, te has logeado";
                     string titulo = "Registro Correcto";
@@ -57,6 +66,14 @@ namespace Apuestas
                     imag.Image = null;
                     groupBox1.Enabled = false;
                     groupBox2.Enabled = true;
+                    }
+                    else
+                    {
+                        string mensage = "Contrasena Incorrecta(Utiliza algun caracter en su contrasena)";
+                        string titulo = "Error";
+                        MessageBoxButtons opciones = MessageBoxButtons.OK;
+                        DialogResult result = MessageBox.Show(mensage, titulo, opciones, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -128,11 +145,6 @@ namespace Apuestas
         private void mostrar_CheckedChanged(object sender, EventArgs e)
         {
 
-            for (int i = 0; i < Lpass.ToString().Length; i++)
-            {
-                muestra.Text = Lpass.ToString();
-            }
-            muestra.Text = "";
         }
 
         private void cal_ValueChanged(object sender, EventArgs e)

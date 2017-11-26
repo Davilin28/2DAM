@@ -1,9 +1,22 @@
-C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del estado\Apuestas\Apuestas\bin\Debug\Apuestas.exe.config
-C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del estado\Apuestas\Apuestas\bin\Debug\Apuestas.exe
-C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del estado\Apuestas\Apuestas\bin\Debug\Apuestas.pdb
-C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del estado\Apuestas\Apuestas\obj\Debug\Apuestas.csprojResolveAssemblyReference.cache
-C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del estado\Apuestas\Apuestas\obj\Debug\Apuestas.Form1.resources
-C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del estado\Apuestas\Apuestas\obj\Debug\Apuestas.Properties.Resources.resources
-C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del estado\Apuestas\Apuestas\obj\Debug\Apuestas.csproj.GenerateResource.Cache
-C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del estado\Apuestas\Apuestas\obj\Debug\Apuestas.exe
-C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del estado\Apuestas\Apuestas\obj\Debug\Apuestas.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\bin\Debug\Apuestas.exe.config
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\bin\Debug\Apuestas.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\bin\Debug\Apuestas.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\obj\Debug\Apuestas.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\obj\Debug\Apuestas.Form1.resources
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\obj\Debug\Apuestas.Properties.Resources.resources
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\obj\Debug\Apuestas.csproj.GenerateResource.Cache
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\obj\Debug\Apuestas.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\obj\Debug\Apuestas.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Examen\Apuestas\Apuestas\obj\Debug\Apuestas.Form2.resources
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\a\Apuestas\Apuestas\bin\Debug\Apuestas.exe.config
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\a\Apuestas\Apuestas\obj\Debug\Apuestas.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\a\Apuestas\Apuestas\obj\Debug\Apuestas.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\a\Apuestas\Apuestas\obj\Debug\Apuestas.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\a\Apuestas\Apuestas\obj\Debug\Apuestas.Form1.resources
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\a\Apuestas\Apuestas\obj\Debug\Apuestas.Properties.Resources.resources
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\a\Apuestas\Apuestas\obj\Debug\Apuestas.csproj.GenerateResource.Cache
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\a\Apuestas\Apuestas\bin\Debug\Apuestas.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\a\Apuestas\Apuestas\bin\Debug\Apuestas.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del Estado\Apuestas\Apuestas\bin\Debug\Apuestas.exe.config
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del Estado\Apuestas\Apuestas\obj\Debug\Apuestas.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\desarrollo de interfaces\Visual Studio\Apuestas del Estado\Apuestas\Apuestas\obj\Debug\Apuestas.pdb
