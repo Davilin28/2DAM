@@ -137,6 +137,8 @@ namespace Prueba
 
         private void button3_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Add("ptatas");
+
             string mensage = "Debe rellenar todos los campos";
             string titulo = "Error en datos";
             MessageBoxButtons opciones = MessageBoxButtons.OK;

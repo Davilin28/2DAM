@@ -101,25 +101,19 @@ namespace Apuestas
                         case 0:
                             for (int i = 0; i < 16; i++)
                                 ((CheckBox)listchek[i]).Checked = false;
-                            numSel = 0;
                             numMax = 4;
-                            manual();
                             numRein();
                             break;
                         case 1:
                             for (int i = 0; i < 16; i++)
                                 ((CheckBox)listchek[i]).Checked = false;
-                            numSel = 0;
                             numMax = 6;
-                            manual();
                             numRein();
                             break;
                         case 2:
                             for (int i = 0; i < 16; i++)
                                 ((CheckBox)listchek[i]).Checked = false;
-                            numSel = 0;
                             numMax = 8;
-                            manual();
                             numRein();
                             break;
                     }
@@ -149,12 +143,11 @@ namespace Apuestas
 
         private void rM_CheckedChanged(object sender, EventArgs e)
         {
-            Rein.Text = random.Next(1, 11).ToString();
+            numRein();
             if (rM.Checked && Lista.SelectedIndex != -1)
             {
                 act();
             }
-            manual();
         }
 
         private void rA_CheckedChanged(object sender, EventArgs e)
@@ -197,11 +190,6 @@ namespace Apuestas
             }
         }
 
-        private void manual()
-        {
-               
-        }
-
         private void numRein()
         {
             Rein.Text = random.Next(1, 11).ToString();
@@ -220,88 +208,447 @@ namespace Apuestas
 
         private void Valida_Click(object sender, EventArgs e)
         {
-                    groupBox2.Enabled = true;
-                    final.Text += "Sorteo del dia: " + Cal.Text + "\t" + "\t";
+
+            string comprobar = "";
+
+            for (int h = 0; h < listchek.Count; h++)
+            {
+                if (((CheckBox)listchek[h]).Checked == true)
+                {
+                    if (Lista.SelectedIndex == 0 && rM.Checked)
+                    {
+                        if (numMax == 0)
+                        {
+                            comprobar = "true";
+                        }
+                        else
+                        {
+                            comprobar = "false";
+                        }
+                    }
+                    if (Lista.SelectedIndex == 1 && rM.Checked)
+                    {
+                        if (numMax == 0)
+                        {
+                            comprobar = "true";
+                        }
+                        else
+                        {
+                            comprobar = "false";
+                        }
+                    }
+                    if (Lista.SelectedIndex == 2 && rM.Checked)
+                    {
+                        if (numMax == 0)
+                        {
+                            comprobar = "true";
+                        }
+                        else
+                        {
+                            comprobar = "false";
+                        }
+                    }
+                }
+            }
+
+            if (Lista.SelectedIndex.Equals(0) && comprobar.Equals("false"))
+            {
+                string mensaje = "Debes marcar los numeros maximos 4";
+                string titulo = "Seleccionar los numeros SENCILLA";
+                MessageBoxButtons opciones = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(mensaje, titulo, opciones, MessageBoxIcon.Error);
+            }
+            if (Lista.SelectedIndex.Equals(1) && comprobar.Equals("false"))
+            {
+                string mensaje = "Debes marcar los numeros maximos 6";
+                string titulo = "Seleccionar los numeros MULTIPLE";
+                MessageBoxButtons opciones = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(mensaje, titulo, opciones, MessageBoxIcon.Error);
+            }
+            if (Lista.SelectedIndex.Equals(2) && comprobar.Equals("false"))
+            {
+                string mensaje = "Debes marcar los numeros maximos 8";
+                string titulo = "Seleccionar los numeros EXTREMA";
+                MessageBoxButtons opciones = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(mensaje, titulo, opciones, MessageBoxIcon.Error);
+            }
+            
+            if (comprobar.Equals("true") || rA.Checked == true) { 
+
+            DateTime hoy = DateTime.Today;
+            groupBox2.Enabled = true;
+                list.Items.Add("Sorteo del dia: " + Cal.Text + "\t" + "\t");
 
                     for (int j = 0; j < listchek.Count; j++)
                     {
                         if (((CheckBox)listchek[j]).Checked == true)
                         {
-                            final.Text += "Tus Numeros son: " + ((CheckBox)listchek[j]).Text + "\n";
+                        list.Items.Add("Tus Numeros son: " + ((CheckBox)listchek[j]).Text + "\n");
                         }
-                    } 
-            final.Text += "Tu Reitengro es: " + Rein.Text + " ";
+                    }
+                     list.Items.Add("Tu Reitengro es: " + Rein.Text + " ");
+
+            Lista.Enabled = false;
+            Lista.SelectedIndex = -1;
+            rA.Enabled = false;
+            rM.Enabled = false;
+            rM.Checked = true;
+            Valida.Enabled = false;
+            Cal.Enabled = false;
+            Cal.Value = hoy;
+            Rein.Text = "";
+            Rein.Enabled = false;
+            
+
+            for (int i = 0; i < listchek.Count; i++)
+            {
+                if (((CheckBox)listchek[i]).Checked == true)
+                {
+                    ((CheckBox)listchek[i]).Checked = false;
+                }
+                ((CheckBox)listchek[i]).Enabled = false;
+            }
+            }
         }
 
         private void click1(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox1.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox1.Checked = false;
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click2(object sender, EventArgs e)
         {
+            if (checkBox2.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox2.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox2.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click3(object sender, EventArgs e)
         {
+            if (checkBox3.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox3.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox3.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click4(object sender, EventArgs e)
         {
+            if (checkBox4.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox4.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox4.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click5(object sender, EventArgs e)
         {
+            if (checkBox5.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox5.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox5.Checked = false;
 
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click6(object sender, EventArgs e)
         {
+            if (checkBox6.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox6.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox6.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click7(object sender, EventArgs e)
         {
+            if (checkBox7.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox7.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox7.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click8(object sender, EventArgs e)
         {
+            if (checkBox8.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox8.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox8.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click9(object sender, EventArgs e)
         {
+            if (checkBox9.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox9.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox9.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click10(object sender, EventArgs e)
         {
+            if (checkBox10.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox10.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox10.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click11(object sender, EventArgs e)
         {
+            if (checkBox11.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox11.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox11.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click12(object sender, EventArgs e)
         {
+            if (checkBox12.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox12.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox12.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click13(object sender, EventArgs e)
         {
+            if (checkBox13.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox13.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox13.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click14(object sender, EventArgs e)
         {
+            if (checkBox14.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox14.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox14.Checked = false;
+
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click15(object sender, EventArgs e)
         {
+            if (checkBox15.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox15.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox15.Checked = false;
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void click16(object sender, EventArgs e)
         {
+            if (checkBox16.Checked)
+            {
+                if (numMax > 0)
+                {
+                    checkBox16.Checked = true;
+                    numMax--;
+                }
+                else
+                {
+                    checkBox16.Checked = false;
+                }
+            }
+            else
+            {
+                numMax++;
+            }
         }
 
         private void Apostar_Click(object sender, EventArgs e)
         {
-            final.Text = "";
-            groupBox2.Enabled = false;
+            list.Items.Clear();
+           groupBox2.Enabled = false;
+           Lista.Enabled = true;
         }
 
         private void Salir_Click(object sender, EventArgs e)
