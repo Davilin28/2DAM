@@ -16,7 +16,7 @@ public class Menu {
 			System.out.println("3.- Añadir Palabra.");
 			System.out.println("4.- Imprimir.");
 			System.out.println("5.- Vaciar estructura.");
-			
+
 			System.out.println("8.- Salir.");
 
 			opcion = teclado.nextInt();

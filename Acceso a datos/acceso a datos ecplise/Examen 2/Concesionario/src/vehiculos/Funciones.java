@@ -45,7 +45,7 @@ public class Funciones {
 	}
 
 	public static void AñadirPrecio(Vehiculos[] vehiculo) {
-		
+
 	}
 
 	public static void AñadirPalabra(Vehiculos[] vehiculo) {

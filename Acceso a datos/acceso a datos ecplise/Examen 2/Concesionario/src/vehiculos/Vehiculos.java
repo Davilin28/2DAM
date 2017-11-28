@@ -4,7 +4,7 @@ public class Vehiculos {
 
 	private String nombreModelo;
 	private double precio;
-	
+
 	public Vehiculos(String nombreModelo, double precio) {
 		super();
 		this.nombreModelo = nombreModelo;
@@ -18,6 +18,7 @@ public class Vehiculos {
 	public void setNombreModelo(String nombreModelo) {
 		this.nombreModelo = nombreModelo;
 	}
+
 	public void concatenar(String nombreModelo) {
 		this.nombreModelo += nombreModelo;
 	}
@@ -29,14 +30,12 @@ public class Vehiculos {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
-	public void sumarPrecio(double p) 
-	{
+
+	public void sumarPrecio(double p) {
 		this.precio += p;
 	}
-	
-	public void ampliar(String n) 
-	{
+
+	public void ampliar(String n) {
 		this.nombreModelo += n;
 	}
 }

@@ -10,13 +10,11 @@ public class Principal {
 		vehiculo[2] = new Vehiculos("Ford", 100);
 		vehiculo[3] = new Vehiculos("Leon", 250);
 		vehiculo[4] = new Vehiculos("Hyundai", 50);
-	
-	// Ampliar y sumar precio a dos vehiculos.
-			
+
+		// Ampliar y sumar precio a dos vehiculos.
 		vehiculo[0].ampliar("-260");
 		vehiculo[2].sumarPrecio(100);
 
 		Menu.opciones(vehiculo);
-		
 	}
 }
