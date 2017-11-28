@@ -277,16 +277,15 @@ namespace Apuestas
 
             DateTime hoy = DateTime.Today;
             groupBox2.Enabled = true;
-                list.Items.Add("Sorteo del dia: " + Cal.Text + "\t" + "\t");
-
+                int x = 0;
                     for (int j = 0; j < listchek.Count; j++)
                     {
                         if (((CheckBox)listchek[j]).Checked == true)
                         {
-                        list.Items.Add("Tus Numeros son: " + ((CheckBox)listchek[j]).Text + "\n");
+                        list.Items.Add("Numero " + ( x = x+1 ) + ": "+ ((CheckBox)listchek[j]).Text + "\n");
                         }
                     }
-                     list.Items.Add("Tu Reitengro es: " + Rein.Text + " ");
+                     list.Items.Add("Reitengro: " + Rein.Text + " ");
 
             Lista.Enabled = false;
             Lista.SelectedIndex = -1;
