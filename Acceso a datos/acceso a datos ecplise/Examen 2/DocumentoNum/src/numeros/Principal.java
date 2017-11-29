@@ -3,6 +3,8 @@ package numeros;
 import java.io.*;
 import java.util.Scanner;
 
+/* 4.Crear un programa que escriba sobre un fichero de datos los 20 primeros numeros pares.*/
+
 public class Principal {
 
 	public static void escribir(int num) {
