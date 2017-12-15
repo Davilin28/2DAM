@@ -134,10 +134,6 @@ namespace Apuestas
         {
             Remail.Text = "";
             Rpass.Text = "";
-            Lemail.Text = "";
-            Lpass.Text = "";
-            muestra.Text = "";
-            mostrar.Checked = false;
             imag.Image = null;
             cal.Value = hoy;
         }
@@ -150,6 +146,14 @@ namespace Apuestas
         private void cal_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Lemail.Text = "";
+            Lpass.Text = "";
+            muestra.Text = "";
+            mostrar.Checked = false;
         }
     }
 }
