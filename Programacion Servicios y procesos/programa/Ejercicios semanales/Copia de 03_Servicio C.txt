@@ -1,0 +1,31 @@
+﻿Esquema
+
+Haz un programa básico.
+
+Crea un hijo y termina el programa padre (que está asociado a un grupo de procesos).
+
+Establece el hijo como líder de una sesión nueva (setsid).
+
+Decide qué permisos tiene para leer y escribir tu programa. (umask)
+
+Cambia el pwd del demonio al directorio raíz. (chdir)
+
+Periódicamente ejecuta una tarea y, ponte a dormir para que otros puedan ejecutar la suya. (sleep)
+
+Completado Los ejercicos de Arriba me falta por hacer un demonio
+
+EJERCICIOS
+
+Escribe un demonio que haga lo que tu quieras. 
+Te proponemos como ejemplo que imprima la hora cada minuto, o que escriba en un fichero todas las pulsaciones del teclado.
+
+
+
+
+
+
+
+
+
+
+

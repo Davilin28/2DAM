@@ -1,0 +1,44 @@
+Estudia el código anterior y haz un esquema de cómo funciona. Comenta los detalles que te parezcan relevantes.
+
+- Detalles: 
+	El say_bye lo que realiza es que cuando se para el servicio envia un mensaje de cerrado.
+
+Haz un script bash que pueda funcionar como servicio. Crea un script sysv lanzador, como el del capítulo anterior, 
+apropiado para este servicio e indica en qué directorio lo has de instalar y qué comandos lo habilitan y lo arrancan.
+	
+
+- Script sysv lanzador.
+
+#!/bin/sh
+# chkconfig: 345 95 4
+# description: Montaje SAMBA.
+
+case "$1" in
+    'start')
+        echo "*** Montando filesystems por samba*** "
+		mount -t cifs -o credentials=/root/.samba_credentials_sbureau_rw_nuevo,gid=users,uid=sbureau_rw,noperm //AGPROITX02/FileAct /datos/sbureau/swift/FileAct
+		mount -t cifs -o credentials=/root/.samba_credentials_sbureau_rw,gid=users,uid=sbureau_rw,noperm //ACPROITX01/MESSAGE_PARTNER /datos/sbureau/swift/FIN
+		mount -t cifs -o credentials=/root/.samba_credentials_sbureau_rw,gid=users,uid=sbureau_rw,noperm //AGPROITX01/FileAct /datos/sbureau/swift/FileActEEFF
+		mount -t cifs -o credentials=/root/.samba_credentials_sbureau_rw,gid=users,uid=sbureau_rw,noperm //TASPROITX01/MESSAGE_PARTNER  /datos/sbureau/swift/FINTAS
+		mount -t cifs -o credentials=/root/.samba_credentials_sbureau_rw_nuevo,gid=users,uid=sbureau_rw,noperm //IBERIAPRITX01/Files /datos/sbureau/swift/Lite/IberiaExpress
+    ;;
+	'stop')
+        echo  "*** Desmontando filesystems *** "
+        umount /datos/sbureau/swift/FIN
+        umount /datos/sbureau/swift/FileAct
+        umount /datos/sbureau/swift/FileActEEFF
+        umount /datos/sbureau/swift/FINTAS
+        umount /datos/sbureau/swift/Lite/IberiaExpress
+        
+        ;;
+	*)
+        echo $"Usage: $0 {start|stop}"
+        ;;
+esac
+
+
+- Se instala en /etc/init.d 
+- dentro de init.d sudo update.rc mysql enable/disable
+- De esta forma arrancamos el servidor dentro de la carpeta init.d service <servicio> start
+
+
