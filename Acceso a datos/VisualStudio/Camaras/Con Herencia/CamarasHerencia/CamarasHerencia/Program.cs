@@ -18,6 +18,8 @@ namespace CamarasHerencia
             cam.Escribe(); // Coge el escribe del padre
             unaCamara.Escribe(); // Coge el escribe del padre y pierde zoom y resolucion.
             cw.Escribe(); // Coge el escribe del hijo.
+
+            Console.ReadKey();
         }
     }
 }

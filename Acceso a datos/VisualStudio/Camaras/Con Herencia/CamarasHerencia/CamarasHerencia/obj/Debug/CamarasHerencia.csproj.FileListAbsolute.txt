@@ -1,1 +1,6 @@
 C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Camaras\Con Herencia\CamarasHerencia\CamarasHerencia\bin\Debug\CamarasHerencia.exe.config
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Camaras\Con Herencia\CamarasHerencia\CamarasHerencia\bin\Debug\CamarasHerencia.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Camaras\Con Herencia\CamarasHerencia\CamarasHerencia\bin\Debug\CamarasHerencia.pdb
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Camaras\Con Herencia\CamarasHerencia\CamarasHerencia\obj\Debug\CamarasHerencia.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Camaras\Con Herencia\CamarasHerencia\CamarasHerencia\obj\Debug\CamarasHerencia.exe
+C:\Users\David\Documents\GitHub\Davilin28\2DAM\2DAM\Acceso a datos\VisualStudio\Camaras\Con Herencia\CamarasHerencia\CamarasHerencia\obj\Debug\CamarasHerencia.pdb
