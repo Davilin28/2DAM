@@ -10,11 +10,11 @@ struct Tpila{
 	unsigned cont;
 } primos;
 
-void push				(struct Tpila *numeros,int dato){
+void push	(struct Tpila *numeros,int dato){
 	numeros->num[numeros->cont++] = dato;
 }
 
-bool es_primo			(unsigned num){
+bool es_primo(unsigned num){
 
 	for(unsigned i = 0; i<primos.cont;i++)
 		if(num % primos.num[i] == 0)
@@ -23,7 +23,7 @@ bool es_primo			(unsigned num){
 	return true;
 }
 
-void push_primo			(unsigned num){
+void push_primo(unsigned num){
 
 	if(es_primo(num)){
 		push(&primos,num);
@@ -31,7 +31,7 @@ void push_primo			(unsigned num){
 	}
 }
 
-void *numeros_primos	(void *){
+void *numeros_primos(void *){
 	
 	for(unsigned i = 2;i<MAX;i++)
 		push_primo(i);
@@ -39,7 +39,7 @@ void *numeros_primos	(void *){
 	return NULL;
 }
 
-int main				(int  argc , char *argv []) {
+int main(int  argc , char *argv []) {
 	
 	primos.num = (unsigned *) malloc (10000 * sizeof(unsigned));
 	
