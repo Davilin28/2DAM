@@ -1,9 +1,3 @@
-#
-# Javier Abellán. 4 de Abril de 2003
-#
-# Makefile para varios programas de ejemplo de trheads y procesos.
-#
-
 # Hacer todos los programas
 all : pthread espera pfork sinmutex conmutex pipefork
 
